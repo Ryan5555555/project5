@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">project5</string>
+    <string name="app_version">1.0.1beta</string>
+    <string name="text_hint">請輸入文字</string>
+    <string name="name_hint">請輸入姓名</string>
+    <string name="email_hint">請輸入電子郵件</string>
+    <string name="password_hint">請輸入至少六位數以上密碼</string>
+    <string name="icon">封面圖片</string>
+    <string name="title_name">稻米病害通</string>
+    <string name="register">註冊</string>
+    <string name="register_title">註冊帳號</string>
+    <string name="login">登入</string>
+    <string name="login_title">登入帳號</string>
+    <string name="user_title">個人檔案</string>
+    <string name="logout">登出</string>
+</resources>

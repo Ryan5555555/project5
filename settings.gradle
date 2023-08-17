@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories { //從以下這些地方獲取plugin插件
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://chaquo.com/maven" }
+    }
+}
+rootProject.name = "project5"//根項目
+include ':app'//子項目

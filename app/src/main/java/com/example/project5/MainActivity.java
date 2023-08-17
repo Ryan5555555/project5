@@ -1,0 +1,111 @@
+package com.example.project5;
+
+import android.content.Intent;
+import android.os.Bundle;
+
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+
+public class MainActivity extends AppCompatActivity {
+
+    TextInputEditText editTextEmail,getEditTextPassword;
+    FirebaseAuth mAuth;
+    ProgressBar progressBar;
+
+    Button register, login;
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        如果有帳號就直接進去
+        if(currentUser != null){
+            Intent intent = new Intent(getApplicationContext(),user.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mAuth = FirebaseAuth.getInstance();
+        editTextEmail = findViewById(R.id.email);
+        getEditTextPassword = findViewById(R.id.password);
+        register = findViewById(R.id.register);
+        login = findViewById(R.id.login);
+
+//        findViewById應該放在 setContentView(R.layout.activity_main); 之後
+
+        register.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent intent = new Intent(getApplicationContext(), register.class);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
+                String email, password;
+                email = String.valueOf(editTextEmail.getText());
+                password = String.valueOf(getEditTextPassword.getText());
+
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(MainActivity.this, "您尚未輸入電子郵件，請重新輸入", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(MainActivity.this, "您尚未輸入密碼，請重新輸入", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                progressBar.setVisibility(View.GONE);//GONE完全隱藏不佔據布局空間
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(getApplicationContext(), "成功登入", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), user.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    Toast.makeText(MainActivity.this, "登入失敗",
+                                            Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, task.getException().getLocalizedMessage(),
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                        });
+                 }
+
+        }  );
+    }
+}
+
+
+
