@@ -132,7 +132,8 @@
         app:cardElevation="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:focusable="true">
+        android:focusable="true"
+        tools:ignore="SpeakableTextPresentCheck">
 
         <ImageView
             android:id="@+id/home"
