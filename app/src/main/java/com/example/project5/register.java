@@ -51,7 +51,7 @@ public class register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
-        editTextName = findViewById(R.id.name);
+        //editTextName = findViewById(R.id.name);
         editTextEmail = findViewById(R.id.email);
         getEditTextPassword = findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
@@ -59,13 +59,20 @@ public class register extends AppCompatActivity {
         Button login = findViewById(R.id.login);
         Button register = findViewById(R.id.register);
 
-        login.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-            startActivity(intent);
-            finish();
+        //login.setOnClickListener(v -> {            //原版
+        //    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        //    startActivity(intent);
+        //    finish();
+        //});
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
         });
-
-
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
