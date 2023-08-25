@@ -4,6 +4,8 @@
     <string name="text_hint">請輸入文字</string>
     <string name="name_hint">請輸入姓名</string>
     <string name="email_hint">請輸入電子郵件</string>
+    <string name="phonenum_hint">請輸入行動電話號碼</string>
+    <string name="adress_hint">請輸入地址</string>
     <string name="password_hint">請輸入至少六位數以上密碼</string>
     <string name="icon">封面圖片</string>
     <string name="title_name">稻米病害通</string>
