@@ -54,6 +54,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        mlModelBinding true
+    }
 }
 
 dependencies {// 项目依赖项
@@ -61,7 +64,8 @@ dependencies {// 项目依赖项
 //pytorch
     implementation 'org.pytorch:pytorch_android:1.13.1'
     implementation 'org.pytorch:pytorch_android_torchvision:1.13.1'
-
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
 
 
     def camerax_version = '1.2.3'//相機
