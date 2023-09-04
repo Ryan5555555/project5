@@ -16,14 +16,20 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="6"
+            android:layout_weight="2"
             android:background="#99000000"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/textView4" />
 
-
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#B2000000"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="@+id/textView4" />
     </LinearLayout>
     <!--home返回主頁-->
     <androidx.cardview.widget.CardView
@@ -60,27 +66,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-        <TextView
-            android:layout_marginTop="60dp"
-            android:id="@+id/textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="病害圖鑑"
-            android:textSize="30dp"
-            android:textStyle="bold"/>
-            
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
+            <TextView
+                android:layout_marginTop="60dp"
+                android:id="@+id/textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="病害圖鑑"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="20dp">
                 <RelativeLayout
                     android:id="@+id/R1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#67E451"
-                    android:padding="10dp">
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
 
 
                     <ImageView
@@ -92,18 +99,14 @@
                         android:id="@+id/t1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/imageView"
                         android:text="病例1號"
                         android:layout_centerVertical="true"
                         android:textSize="30sp"
-                        android:textStyle="bold"
-                        />
+                        android:textStyle="bold" />
+
                 </RelativeLayout>
 
-
             </androidx.cardview.widget.CardView>
-
-
         </LinearLayout>
 
     </ScrollView>
