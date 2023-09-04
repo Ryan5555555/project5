@@ -22,7 +22,6 @@ public class UserAdapter extends  RecyclerView.Adapter<UserAdapter.ViewHolder> {
         this.mUsers = mUsers;
         this.mContext = mContext;
     }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -135,6 +135,7 @@ public class MessageActivity extends AppCompatActivity {
                     recyclerView.setAdapter(messageAdapter);
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }

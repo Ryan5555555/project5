@@ -26,7 +26,6 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
 
     FirebaseUser fuser;//Firebase中的當前使用者
 
-
     public MessageAdapter(Context mContext,List<Chat> mChat){
         this.mChat  = mChat;
         this.mContext = mContext;
