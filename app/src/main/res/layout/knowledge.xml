@@ -91,10 +91,10 @@
 
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/R1image"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
-                        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                        tools:srcCompat="@drawable/rice" />
                     <TextView
                         android:id="@+id/t1"
                         android:layout_width="wrap_content"
