@@ -1,6 +1,7 @@
 package com.example.project5;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
@@ -28,6 +30,7 @@ public class knowledge extends AppCompatActivity{
 
         ImageView home = findViewById(R.id.home);
         RelativeLayout R1 = findViewById(R.id.R1);
+        ImageView R1img = findViewById(R.id.R1image);
 
 
         home.setOnClickListener(v -> {
@@ -36,6 +39,7 @@ public class knowledge extends AppCompatActivity{
             startActivity(intent);
         });
 
+        //彈出視窗
         R1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +50,13 @@ public class knowledge extends AppCompatActivity{
                 PopupWindow popupWindow = new PopupWindow(viewPopupwindow,view.getWidth(),500,true);
 
                 popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
+
+                ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
+                TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
+                popimg.setImageDrawable(R1img.getDrawable());
+                poptext.setText("我是病例1號");
+
+
 
                 viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
                     @Override
