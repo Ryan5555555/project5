@@ -66,6 +66,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
             <TextView
                 android:layout_marginTop="60dp"
                 android:id="@+id/textview"
@@ -76,11 +81,13 @@
                 android:textStyle="bold"/>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/C1"
                 android:layout_width="200dp"
                 android:layout_height="250dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                app:cardCornerRadius="20dp">
+                android:layout_marginLeft="3dp"
+                app:cardCornerRadius="20dp"
+                android:layout_below="@id/textview">
                 <RelativeLayout
                     android:id="@+id/R1"
                     android:layout_width="match_parent"
@@ -88,18 +95,16 @@
                     android:padding="10dp"
                     android:orientation="vertical">
 
-
-
                     <ImageView
                         android:id="@+id/R1image"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
-                        tools:srcCompat="@drawable/rice" />
+                        tools:srcCompat="@drawable/riceblast" />
                     <TextView
                         android:id="@+id/t1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="病例1號"
+                        android:text="稻熱病"
                         android:layout_centerVertical="true"
                         android:textSize="30sp"
                         android:textStyle="bold" />
@@ -107,6 +112,144 @@
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/C2"
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="3dp"
+                app:cardCornerRadius="20dp"
+                android:layout_below="@id/textview"
+                android:layout_toRightOf="@id/C1">
+                <RelativeLayout
+                    android:id="@+id/R2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/R2image"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        tools:srcCompat="@drawable/bacterialleafblight" />
+                    <TextView
+                        android:id="@+id/t2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="白葉枯病"
+                        android:layout_centerVertical="true"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C3"
+                    android:layout_width="200dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="3dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_below="@id/C1">
+                    <RelativeLayout
+                        android:id="@+id/R3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/R3image"
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            tools:srcCompat="@drawable/brownspot" />
+                        <TextView
+                            android:id="@+id/t3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="胡麻葉枯病"
+                            android:layout_centerVertical="true"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C4"
+                    android:layout_width="200dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="3dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_below="@id/C2"
+                    android:layout_toRightOf="@id/C3">
+                    <RelativeLayout
+                        android:id="@+id/R4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/R4image"
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            tools:srcCompat="@drawable/narrowbrownleafspot" />
+                        <TextView
+                            android:id="@+id/t4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="褐條葉枯病"
+                            android:layout_centerVertical="true"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C5"
+                    android:layout_width="200dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="3dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_below="@id/C3">
+                    <RelativeLayout
+                        android:id="@+id/R5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/R5image"
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            tools:srcCompat="@drawable/sheathblight" />
+                        <TextView
+                            android:id="@+id/t5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="紋枯病"
+                            android:layout_centerVertical="true"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
         </LinearLayout>
 
     </ScrollView>
