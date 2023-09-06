@@ -29,8 +29,26 @@ public class knowledge extends AppCompatActivity{
         setContentView(R.layout.knowledge);
 
         ImageView home = findViewById(R.id.home);
+
         RelativeLayout R1 = findViewById(R.id.R1);
         ImageView R1img = findViewById(R.id.R1image);
+        TextView R1text = findViewById(R.id.t1);
+
+        RelativeLayout R2 = findViewById(R.id.R2);
+        ImageView R2img = findViewById(R.id.R2image);
+        TextView R2text = findViewById(R.id.t2);
+
+        RelativeLayout R3 = findViewById(R.id.R3);
+        ImageView R3img = findViewById(R.id.R3image);
+        TextView R3text = findViewById(R.id.t3);
+
+        RelativeLayout R4 = findViewById(R.id.R4);
+        ImageView R4img = findViewById(R.id.R4image);
+        TextView R4text = findViewById(R.id.t4);
+
+        RelativeLayout R5 = findViewById(R.id.R5);
+        ImageView R5img = findViewById(R.id.R5image);
+        TextView R5text = findViewById(R.id.t5);
 
 
         home.setOnClickListener(v -> {
@@ -54,9 +72,111 @@ public class knowledge extends AppCompatActivity{
                 ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
                 TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
                 popimg.setImageDrawable(R1img.getDrawable());
-                poptext.setText("我是病例1號");
+                poptext.setText("我是"+R1text);
 
+                viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindow.dismiss();
+                        return true;
+                    }
+                });
+            }
+        });
 
+        R2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+
+                View viewPopupwindow = layoutInflater.inflate(R.layout.knowledge_popup,null);
+
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,view.getWidth(),500,true);
+
+                popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
+
+                ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
+                TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
+                popimg.setImageDrawable(R2img.getDrawable());
+                poptext.setText("我是"+R2text);
+
+                viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindow.dismiss();
+                        return true;
+                    }
+                });
+            }
+        });
+
+        R3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+
+                View viewPopupwindow = layoutInflater.inflate(R.layout.knowledge_popup,null);
+
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,view.getWidth(),500,true);
+
+                popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
+
+                ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
+                TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
+                popimg.setImageDrawable(R3img.getDrawable());
+                poptext.setText("我是"+R3text);
+
+                viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindow.dismiss();
+                        return true;
+                    }
+                });
+            }
+        });
+
+        R4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+
+                View viewPopupwindow = layoutInflater.inflate(R.layout.knowledge_popup,null);
+
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,view.getWidth(),500,true);
+
+                popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
+
+                ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
+                TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
+                popimg.setImageDrawable(R4img.getDrawable());
+                poptext.setText("我是"+R4text);
+
+                viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindow.dismiss();
+                        return true;
+                    }
+                });
+            }
+        });
+
+        R5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+
+                View viewPopupwindow = layoutInflater.inflate(R.layout.knowledge_popup,null);
+
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,view.getWidth(),500,true);
+
+                popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
+
+                ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
+                TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
+                popimg.setImageDrawable(R5img.getDrawable());
+                poptext.setText("我是"+R5text);
 
                 viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
                     @Override
