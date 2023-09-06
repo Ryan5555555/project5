@@ -40,8 +40,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout">
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -57,97 +55,237 @@
                 android:textSize="48sp"
                 android:text="@string/user_title"/>
 
-            <TextView
-                android:id="@+id/user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="user"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guideline18" />
-
-
-            <ScrollView
-                android:id="@+id/sv"
-                android:layout_width="match_parent"
-                android:layout_height="195dp"
-                android:fillViewport="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+<!--                    name-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <FrameLayout
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/name_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:visibility="invisible">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/name_edit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/person"
+                                    android:drawablePadding="10dp"
+                                    android:hint="@string/name_hint" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/name"
+                                android:textSize="16dp"
+                                android:drawableStart="@drawable/person"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginTop="9dp"
+                                android:drawablePadding="10dp"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                             <ImageButton
+                                android:id="@+id/name_change"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/pen"
+                                android:layout_marginTop="5dp"/>
+
+                            <ImageButton
+                                android:id="@+id/name_cancel"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/cancel"
+                                android:layout_marginTop="5dp"
+                                android:visibility="invisible"/>
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+<!--                    email-->
+                  <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                      android:orientation="horizontal">
+                    <FrameLayout
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/name"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/email_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/person"
-                            android:drawablePadding="10dp"
-                            android:hint="@string/name_hint" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                            android:layout_marginStart="16dp"
+                            android:visibility="invisible">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@id/email"
+                            android:id="@+id/email_edit"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableStart="@drawable/email"
                             android:drawablePadding="10dp"
                             android:hint="@string/email_hint" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/email"
+                            android:drawableStart="@drawable/email"
+                            android:gravity="center_vertical"
+                            android:textSize="16dp"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginTop="9dp"
+                            android:drawablePadding="10dp"/>
+                    </FrameLayout>
+                      <FrameLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                          <ImageButton
+                              android:id="@+id/email_change"
+                              android:layout_width="40dp"
+                              android:layout_height="40dp"
+                              android:src="@drawable/pen"
+                              android:layout_marginTop="5dp"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@id/password"
+                          <ImageButton
+                              android:id="@+id/email_cancel"
+                              android:layout_width="40dp"
+                              android:layout_height="40dp"
+                              android:src="@drawable/cancel"
+                              android:layout_marginTop="5dp"
+                              android:visibility="invisible"/>
+
+                      </FrameLayout>
+                  </LinearLayout>
+<!--             phone-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <FrameLayout
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/phone_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:visibility="invisible">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/phone_edit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/phonenum"
+                                    android:drawablePadding="10dp"
+                                    android:hint="@string/phone_hint" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/phone"
+                                android:textSize="16dp"
+                                android:drawableStart="@drawable/phonenum"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginTop="9dp"
+                                android:drawablePadding="10dp"/>
+                        </FrameLayout>
+                        <FrameLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/password"
-                            android:drawablePadding="10dp"
-                            android:hint="@string/password_hint" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_height="wrap_content">
+                            <ImageButton
+                                android:id="@+id/phone_change"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/pen"
+                                android:layout_marginTop="5dp"/>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                            <ImageButton
+                                android:id="@+id/phone_cancel"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/cancel"
+                                android:layout_marginTop="5dp"
+                                android:visibility="invisible"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/phonenum"
+                        </FrameLayout>
+                    </LinearLayout>
+<!--                   address-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <FrameLayout
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/address_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:visibility="invisible">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/address_edit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/home"
+                                    android:drawablePadding="10dp"
+                                    android:hint="@string/address_hint" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/address"
+                                android:textSize="16dp"
+                                android:drawableStart="@drawable/home"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginTop="9dp"
+                                android:drawablePadding="10dp"/>
+                        </FrameLayout>
+                        <FrameLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/phonenum"
-                            android:drawablePadding="10dp"
-                            android:hint="@string/phonenum_hint" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_height="wrap_content">
+                            <ImageButton
+                                android:id="@+id/address_change"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/pen"
+                                android:layout_marginTop="5dp"/>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                            <ImageButton
+                                android:id="@+id/address_cancel"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/cancel"
+                                android:layout_marginTop="5dp"
+                                android:visibility="invisible"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/address"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/home"
-                            android:drawablePadding="10dp"
-                            android:hint="@string/adress_hint" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
+                        </FrameLayout>
+                    </LinearLayout>
                 </LinearLayout>
-            </ScrollView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -158,9 +296,17 @@
                     android:id="@+id/logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="90dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="60dp"
                     android:text="@string/logout" />
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="60dp"
+                    android:text="@string/save" />
 
             </LinearLayout>
 
