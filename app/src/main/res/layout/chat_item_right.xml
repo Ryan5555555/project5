@@ -21,12 +21,21 @@
             android:id="@+id/show_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/draw"
+            android:background="@drawable/draw2"
             android:text="hello"
             android:textSize="18sp"
-            android:textColor="@color/white"
             android:padding="8dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下午5:50"
+            android:textColor="@color/primarydark"
+            android:layout_toLeftOf="@+id/show_message"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="5dp"/>
     </RelativeLayout>
 </RelativeLayout>

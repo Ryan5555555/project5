@@ -14,7 +14,10 @@ import com.example.project5.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHolder> {
 
@@ -45,12 +48,38 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
 
     @Override
     public void onBindViewHolder(@NonNull MessageAdapter.ViewHolder holder, int position) {
-
-
-        Chat chat =mChat.get(position);
+        Chat chat = mChat.get(position);
 
         holder.show_message.setText(chat.getMessage());
-//        它通過mUsers清單中的使用者資料和mChat清單中的聊天訊息，將訊息內容設定到ViewHolder中的show_message元件上
+
+        // 格式化时间戳为台湾时间
+        if (chat.getTimestamp() != null) {
+            SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+            TimeZone taiwanTimeZone = TimeZone.getTimeZone("Asia/Taipei");
+            sdf.setTimeZone(taiwanTimeZone);
+            String time = sdf.format(chat.getTimestamp().toDate()); // 将时间戳转换为日期对象并进行格式化
+
+            String[] timeParts = time.split(" ");
+            String amPm = timeParts[1];
+
+            // 根据消息发送者来确定显示在左边还是右边
+            if (getItemViewType(position) == MSG_TYPE_LEFT) {
+                if (amPm.equals("AM")) {
+                    holder.time.setText("上午 " + timeParts[0]);
+                } else {
+                    holder.time.setText("下午 " + timeParts[0]);
+                }
+            } else {
+                if (amPm.equals("AM")) {
+                    holder.time.setText("上午 " + timeParts[0]);
+                } else {
+                    holder.time.setText("下午 " + timeParts[0]);
+                }
+            }
+        } else {
+            // 时间戳为空时，隐藏时间 TextView
+            holder.time.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -60,11 +89,12 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
 
     public  class  ViewHolder extends RecyclerView.ViewHolder{
         public TextView show_message;
+        public TextView time;
         public ImageView profile_image;
 
         public ViewHolder(View itemView){
             super( itemView);
-
+            time = itemView.findViewById(R.id.time);
             show_message = itemView.findViewById(R.id.show_message);
             profile_image = itemView.findViewById(R.id.profile_image);
         }
