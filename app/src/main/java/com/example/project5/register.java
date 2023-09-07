@@ -136,14 +136,14 @@ public class register extends AppCompatActivity {
                                                         finish();
                                                     } else {
                                                         test = findViewById(R.id.test);
-                                                        Toast.makeText(register.this, "创建帐号失败: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(register.this, "創建帳號失敗: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                                         test.setText(task.getException().getMessage());
                                                     }
                                                 }
                                             });
                                 } else {
                                     // 如果注册失败，向用户显示消息
-                                    Toast.makeText(register.this, "创建帐号失败.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(register.this, "創建帳號失敗.", Toast.LENGTH_SHORT).show();
                                     Toast.makeText(register.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }

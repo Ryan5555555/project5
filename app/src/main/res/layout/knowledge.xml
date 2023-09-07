@@ -63,7 +63,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,7 +75,6 @@
                 android:layout_height="match_parent">
 
             <TextView
-                android:layout_marginTop="60dp"
                 android:id="@+id/textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                         android:id="@+id/R1image"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
-                        tools:srcCompat="@drawable/riceblast" />
+                        app:srcCompat="@drawable/riceblast" />
                     <TextView
                         android:id="@+id/t1"
                         android:layout_width="wrap_content"
@@ -136,7 +136,7 @@
                         android:id="@+id/R2image"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
-                        tools:srcCompat="@drawable/bacterialleafblight" />
+                        app:srcCompat="@drawable/bacterialleafblight" />
                     <TextView
                         android:id="@+id/t2"
                         android:layout_width="wrap_content"
@@ -169,7 +169,7 @@
                             android:id="@+id/R3image"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
-                            tools:srcCompat="@drawable/brownspot" />
+                            app:srcCompat="@drawable/brownspot" />
                         <TextView
                             android:id="@+id/t3"
                             android:layout_width="wrap_content"
@@ -204,7 +204,7 @@
                             android:id="@+id/R4image"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
-                            tools:srcCompat="@drawable/narrowbrownleafspot" />
+                            app:srcCompat="@drawable/narrowbrownleafspot" />
                         <TextView
                             android:id="@+id/t4"
                             android:layout_width="wrap_content"
@@ -237,7 +237,7 @@
                             android:id="@+id/R5image"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
-                            tools:srcCompat="@drawable/sheathblight" />
+                            app:srcCompat="@drawable/sheathblight" />
                         <TextView
                             android:id="@+id/t5"
                             android:layout_width="wrap_content"
