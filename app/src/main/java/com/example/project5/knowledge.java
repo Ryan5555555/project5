@@ -23,12 +23,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
 public class knowledge extends AppCompatActivity{
+    ImageView home;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.knowledge);
 
-        ImageView home = findViewById(R.id.home);
+        home = findViewById(R.id.home);
 
         RelativeLayout R1 = findViewById(R.id.R1);
         ImageView R1img = findViewById(R.id.R1image);
@@ -50,12 +51,13 @@ public class knowledge extends AppCompatActivity{
         ImageView R5img = findViewById(R.id.R5image);
         TextView R5text = findViewById(R.id.t5);
 
-
+        ImageView home = findViewById(R.id.home);
         home.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.setClass(knowledge.this, home.class);//目前Activity與目標Activity
             startActivity(intent);
         });
+
 
         //彈出視窗
         R1.setOnClickListener(new View.OnClickListener() {
@@ -187,8 +189,5 @@ public class knowledge extends AppCompatActivity{
                 });
             }
         });
-
-
     }
-
 }
