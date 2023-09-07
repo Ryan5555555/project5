@@ -42,9 +42,9 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class photo extends AppCompatActivity {
-    Button btHigh = findViewById(R.id.buttonHigh);
-    TextView result = findViewById(R.id.result);
-    ImageView imageHigh = findViewById(R.id.imageViewHigh);
+    Button btHigh ;
+    TextView result;
+    ImageView photo,imageView;
 
     int imageSize = 224;
 
@@ -63,16 +63,20 @@ public class photo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.photo);
+        photo = findViewById(R.id.photo);
+        imageView =findViewById(R.id.imageView);
+        result = findViewById(R.id.result);
 
-        btHigh.setOnClickListener(new View.OnClickListener() {
+
+        photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Launch camera if we have permission
+//                 Launch camera if we have permission
                 if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(cameraIntent, 1);
                 } else {
-                    //Request camera permission if we don't have it.
+//                    Request camera permission if we don't have it.
                     requestPermissions(new String[]{Manifest.permission.CAMERA}, 100);
                 }
             }
@@ -248,7 +252,7 @@ public class photo extends AppCompatActivity {
             Bitmap image=(Bitmap) data.getExtras().get("data");
             int dimension = Math.min(image.getWidth(),image.getHeight());
             image = ThumbnailUtils.extractThumbnail(image,dimension,dimension);
-            imageHigh.setImageBitmap(image);
+            imageView.setImageBitmap(image);
             image = Bitmap.createScaledBitmap(image,imageSize,imageSize,false);
             classifyImage(image);
         }
