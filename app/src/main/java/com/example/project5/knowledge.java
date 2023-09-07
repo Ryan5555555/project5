@@ -23,13 +23,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
 public class knowledge extends AppCompatActivity{
-    ImageView home;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.knowledge);
-
-        home = findViewById(R.id.home);
 
         RelativeLayout R1 = findViewById(R.id.R1);
         ImageView R1img = findViewById(R.id.R1image);
@@ -67,16 +65,17 @@ public class knowledge extends AppCompatActivity{
 
                 View viewPopupwindow = layoutInflater.inflate(R.layout.knowledge_popup,null);
 
-                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,view.getWidth(),500,true);
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,1000,1000,true);
 
                 popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
 
                 ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
                 TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
-                popimg.setImageDrawable(R1img.getDrawable());
-                poptext.setText("我是"+R1text);
+                ImageView exit = viewPopupwindow.findViewById(R.id.imageView3);
+                popimg.setImageResource(R.drawable.riceblast);
+                poptext.setText("我是"+R1text.getText());
 
-                viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
+                exit.setOnTouchListener(new View.OnTouchListener(){
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         popupWindow.dismiss();
@@ -93,16 +92,17 @@ public class knowledge extends AppCompatActivity{
 
                 View viewPopupwindow = layoutInflater.inflate(R.layout.knowledge_popup,null);
 
-                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,view.getWidth(),500,true);
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,1000,1000,true);
 
                 popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
 
                 ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
                 TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
+                ImageView exit = viewPopupwindow.findViewById(R.id.imageView3);
                 popimg.setImageDrawable(R2img.getDrawable());
-                poptext.setText("我是"+R2text);
+                poptext.setText("我是"+R2text.getText());
 
-                viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
+                exit.setOnTouchListener(new View.OnTouchListener(){
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         popupWindow.dismiss();
@@ -119,16 +119,17 @@ public class knowledge extends AppCompatActivity{
 
                 View viewPopupwindow = layoutInflater.inflate(R.layout.knowledge_popup,null);
 
-                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,view.getWidth(),500,true);
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,1000,1000,true);
 
                 popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
 
                 ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
                 TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
+                ImageView exit = viewPopupwindow.findViewById(R.id.imageView3);
                 popimg.setImageDrawable(R3img.getDrawable());
-                poptext.setText("我是"+R3text);
+                poptext.setText("我是"+R3text.getText());
 
-                viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
+                exit.setOnTouchListener(new View.OnTouchListener(){
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         popupWindow.dismiss();
@@ -145,16 +146,17 @@ public class knowledge extends AppCompatActivity{
 
                 View viewPopupwindow = layoutInflater.inflate(R.layout.knowledge_popup,null);
 
-                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,view.getWidth(),500,true);
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,1000,1000,true);
 
                 popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
 
                 ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
                 TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
+                ImageView exit = viewPopupwindow.findViewById(R.id.imageView3);
                 popimg.setImageDrawable(R4img.getDrawable());
-                poptext.setText("我是"+R4text);
+                poptext.setText("我是"+R4text.getText());
 
-                viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
+                exit.setOnTouchListener(new View.OnTouchListener(){
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         popupWindow.dismiss();
@@ -171,14 +173,15 @@ public class knowledge extends AppCompatActivity{
 
                 View viewPopupwindow = layoutInflater.inflate(R.layout.knowledge_popup,null);
 
-                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,view.getWidth(),500,true);
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow,1000,1000,true);
 
                 popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
 
                 ImageView popimg = viewPopupwindow.findViewById(R.id.imageView);
                 TextView poptext = viewPopupwindow.findViewById(R.id.textView5);
+                ImageView exit = viewPopupwindow.findViewById(R.id.imageView3);
                 popimg.setImageDrawable(R5img.getDrawable());
-                poptext.setText("我是"+R5text);
+                poptext.setText("我是"+R5text.getText());
 
                 viewPopupwindow.setOnTouchListener(new View.OnTouchListener(){
                     @Override

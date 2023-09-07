@@ -43,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="@+id/linearLayout">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -52,10 +52,8 @@
             android:id="@+id/imageView"
             android:layout_width="244dp"
             android:layout_height="146dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="27dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="150dp"
+            android:layout_centerHorizontal="true"
             tools:srcCompat="@android:drawable/sym_def_app_icon" />
 
         <TextView
@@ -66,19 +64,18 @@
             android:layout_marginTop="24dp"
             android:text="POPUP Window 示例"
             android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            android:layout_below="@id/imageView"/>
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="0dp"
+            android:layout_alignTop="@id/imageView"
+            android:layout_toRightOf="@id/imageView"
+            android:layout_marginTop="-2dp"
             android:layout_marginEnd="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
-        </LinearLayout>
+    </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
