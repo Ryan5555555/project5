@@ -31,36 +31,37 @@ public class MessageActivity extends AppCompatActivity {
     EditText text_send;
     FirebaseAuth auth;
     FirebaseUser user;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseFirestore db= FirebaseFirestore.getInstance();
 
     MessageAdapter messageAdapter;
     List<Chat> mchat;
     RecyclerView recyclerView;
     Intent intent;
-
+    String managerid = "5U1Z69VEysXbuC4r0HleEpa2fQU2";// managerid 就是 receiver 的 id 可以到 firebase database 選擇 id 當作 manager
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.messageactivity);
         auth = FirebaseAuth.getInstance(); // 初始化 FirebaseAuth 物件
-
-        recyclerView = findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-        linearLayoutManager.setStackFromEnd(true);// 確保列表從底部開始，顯示最新的消息
-        recyclerView.setLayoutManager(linearLayoutManager);
-        mchat = new ArrayList<>();
-        messageAdapter = new MessageAdapter(this, mchat);
-        recyclerView.setAdapter(messageAdapter);
+        user = auth.getCurrentUser(); // 獲取當前用戶
 
         btn_send = findViewById(R.id.btn_send);
         text_send = findViewById(R.id.text_send);
         home = findViewById(R.id.home);
         intent = getIntent();
 
-        user = auth.getCurrentUser(); // 獲取當前用戶
 
-        String managerid = "5U1Z69VEysXbuC4r0HleEpa2fQU2"; // managerid 就是 receiver 的 id 可以到 firebase database 選擇 id 當作 manager
+        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        linearLayoutManager.setStackFromEnd(true);// 確保列表從底部開始，顯示最新的消息
+        recyclerView.setLayoutManager(linearLayoutManager);
+        mchat = new ArrayList<>();//用來存儲讀取到的聊天消息
+        messageAdapter = new MessageAdapter(this, mchat);
+        recyclerView.setAdapter(messageAdapter);
+
+        readMessage(user.getUid(), managerid);
+
 
         home.setOnClickListener(v -> {
             Intent intent = new Intent();
@@ -77,16 +78,13 @@ public class MessageActivity extends AppCompatActivity {
                 Toast.makeText(MessageActivity.this, "尚未輸入", Toast.LENGTH_SHORT).show();
             }
             text_send.setText("");
-            readMessage(user.getUid(), managerid);
         });
-        readMessage(user.getUid(), managerid);
     }
 
     // 步驟2
     private void sendMessage(String sender, String receiver, String message) {
         // 在這裡添加將訊息寫入 Firestore 的程式碼
         // 您可以使用 FirebaseFirestore 的 collection 和 document 來組織資料
-        // 以下是示例程式碼，請根據您的 Firestore 資料結構進行調整：
         HashMap<String, Object> hashmap = new HashMap<>();
 
         hashmap.put("sender", sender);
@@ -94,21 +92,19 @@ public class MessageActivity extends AppCompatActivity {
         hashmap.put("message", message);
         hashmap.put("timestamp", FieldValue.serverTimestamp());
 
-        // 将数据存储到 Firestore
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
         // 創建一個新的訊息文件
         // 將訊息寫入到 Firestore 的 "Chats" 集合中
-        db.collection("Chats")
-                .add(hashmap)
-                .addOnSuccessListener(documentReference -> Toast.makeText(MessageActivity.this,  "傳送訊息成功 " + documentReference.getId(), Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(e -> Toast.makeText(MessageActivity.this, "傳送訊息未成功" , Toast.LENGTH_SHORT).show());
+        db.collection("Chats").add(hashmap)
+                .addOnSuccessListener(documentReference -> {
+                    // 在消息成功发送后再次调用 readMessage 函数
+                    readMessage(user.getUid(), managerid);
+                })
+                .addOnFailureListener(e -> Toast.makeText(MessageActivity.this, "傳送訊息未成功，請聯絡工作人員" , Toast.LENGTH_SHORT).show());
     }
 
 
     // 步驟3
     private void readMessage(String senderid, String receiverid) {
-        mchat = new ArrayList<>();//用來存儲讀取到的聊天消息
         db.collection("Chats")
                 .whereEqualTo("sender", senderid)
                 .whereEqualTo("receiver", receiverid)

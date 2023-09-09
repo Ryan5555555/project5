@@ -143,13 +143,26 @@ public class user extends AppCompatActivity {
         });
 
         logout.setOnClickListener(v -> {
+
+            logout.setEnabled(false);
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
+
+            // 在点击后设置按钮为灰色并延迟一段时间后恢复
+            v.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    logout.setEnabled(true);
+                }
+            }, 100); // 1000毫秒 = 1秒，可以根据需要调整延迟的时间
         });
 
         save.setOnClickListener(v -> {
+
+            save.setEnabled(false);
+
             String new_name = name_edit.getText().toString();
             String new_email = email_edit.getText().toString();
             String new_phone = phone_edit.getText().toString();
@@ -201,6 +214,14 @@ public class user extends AppCompatActivity {
                 updatedData.put("address", new_address);
                 userDocRef.update(updatedData);
             }
+
+            // 在点击后设置按钮为灰色并延迟一段时间后恢复
+            v.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    save.setEnabled(true);
+                }
+            }, 100); // 1000毫秒 = 1秒，可以根据需要调整延迟的时间
 
         });
 

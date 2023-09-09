@@ -71,6 +71,7 @@ public class photo extends AppCompatActivity {
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                photo.setEnabled(false);
 //                 Launch camera if we have permission
                 if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -79,6 +80,13 @@ public class photo extends AppCompatActivity {
 //                    Request camera permission if we don't have it.
                     requestPermissions(new String[]{Manifest.permission.CAMERA}, 100);
                 }
+                // 在点击后设置按钮为灰色并延迟一段时间后恢复
+                view.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        photo.setEnabled(true);
+                    }
+                }, 100); // 1000毫秒 = 1秒，可以根据需要调整延迟的时间
             }
         });
 

@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
     TextInputEditText editTextEmail,getEditTextPassword;
     FirebaseAuth mAuth;
-    ProgressBar progressBar;
-
     Button register, login;
     @Override
     public void onStart() {
@@ -54,19 +52,32 @@ public class MainActivity extends AppCompatActivity {
 
 //        findViewById應該放在 setContentView(R.layout.activity_main); 之後
 
+
         register.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            Intent intent = new Intent(getApplicationContext(), register.class);
-                                            startActivity(intent);
-                                            finish();
-                                        }
-                                    });
+            @Override
+            public void onClick(View v) {
+                // 在点击事件内设置按钮为灰色
+                register.setEnabled(false);
+
+                Intent intent = new Intent(getApplicationContext(), register.class);
+                startActivity(intent);
+                finish();
+
+                // 在点击后设置按钮为灰色并延迟一段时间后恢复
+                v.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        register.setEnabled(true);
+                    }
+                }, 100); // 100毫秒，可以根据需要调整延迟的时间
+            }
+        });
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
+                login.setEnabled(false);
                 String email, password;
                 email = String.valueOf(editTextEmail.getText());
                 password = String.valueOf(getEditTextPassword.getText());
@@ -85,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-
-                                progressBar.setVisibility(View.GONE);//GONE完全隱藏不佔據布局空間
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "成功登入", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), user.class);
@@ -101,9 +110,16 @@ public class MainActivity extends AppCompatActivity {
                             }
 
                         });
+                // 在点击后设置按钮为灰色并延迟一段时间后恢复
+                login.setEnabled(false);
+                v.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        login.setEnabled(true);
+                    }
+                }, 100); // 1000毫秒 = 1秒，可以根据需要调整延迟的时间
                  }
-
-        }  );
+        });
     }
 }
 

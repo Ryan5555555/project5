@@ -77,8 +77,7 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
                 }
             }
         } else {
-            // 时间戳为空时，隐藏时间 TextView
-            holder.time.setVisibility(View.GONE);
+            holder.time.setText("時間錯誤");
         }
     }
 
@@ -108,7 +107,6 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
         }else{
             return  MSG_TYPE_LEFT;
         }
-
     }
 }
 

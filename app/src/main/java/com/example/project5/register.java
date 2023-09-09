@@ -34,10 +34,8 @@ import java.util.HashMap;
 
 
 public class register extends AppCompatActivity {
-    TextView textview,test;
     TextInputEditText editTextName,editTextEmail,editTextPassword,editTextPhone,editTextAddress;
     FirebaseAuth mAuth;
-    DatabaseReference reference;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -64,21 +62,25 @@ public class register extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        Button login = findViewById(R.id.login);
         Button register = findViewById(R.id.register);
+        Button back_to_login = findViewById(R.id.back_to_login);
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        back_to_login.setOnClickListener(v -> {
+            back_to_login.setEnabled(false);
+            Intent intent = new Intent();
+            intent.setClass(register.this, MainActivity.class);//目前Activity與目標Activity
+            startActivity(intent);
+            v.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    back_to_login.setEnabled(true);
+                }
+            }, 100); // 100毫秒，可以根据需要调整延迟的时间
         });
-
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                register.setEnabled(false);
                 String name,email, password,phone,address;
                 name = String.valueOf(editTextName.getText());
                 email = String.valueOf(editTextEmail.getText());
@@ -88,26 +90,70 @@ public class register extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(name)) {
                     Toast.makeText(register.this, "您尚未輸入姓名，請重新輸入", Toast.LENGTH_SHORT).show();
+                    v.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            register.setEnabled(true);
+                        }
+                    }, 100); // 100毫秒，可以根据需要调整延迟的时间
                     return;
                 }
-                 if (TextUtils.isEmpty(email)) {
+                else if (TextUtils.isEmpty(email)) {
                      Toast.makeText(register.this, "您尚未輸入電子郵件，請重新輸入", Toast.LENGTH_SHORT).show();
+                    v.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            register.setEnabled(true);
+                        }
+                    }, 100); // 100毫秒，可以根据需要调整延迟的时间
                      return;
                  }
-                 if (TextUtils.isEmpty(password)) {
+                else if (TextUtils.isEmpty(password)) {
                     Toast.makeText(register.this, "您尚未輸入密碼，請重新輸入", Toast.LENGTH_SHORT).show();
+                    v.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            register.setEnabled(true);
+                        }
+                    }, 100); // 100毫秒，可以根据需要调整延迟的时间
                     return;
-                 } else if (password.length()<6) {
+                }
+                else if (password.length()<6) {
                      Toast.makeText(register.this, "密碼數字需至少輸入六位數", Toast.LENGTH_SHORT).show();
+                    v.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            register.setEnabled(true);
+                        }
+                    }, 100); // 100毫秒，可以根据需要调整延迟的时间
                      return;
-
                  }
-
+                else if (TextUtils.isEmpty(phone)) {
+                    Toast.makeText(register.this, "您尚未輸入行動電話號碼，請重新輸入", Toast.LENGTH_SHORT).show();
+                    v.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            register.setEnabled(true);
+                        }
+                    }, 100); // 100毫秒，可以根据需要调整延迟的时间
+                    return;
+                }
+                else if (TextUtils.isEmpty(address)) {
+                    Toast.makeText(register.this, "您尚未輸入地址，請重新輸入", Toast.LENGTH_SHORT).show();
+                    v.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            register.setEnabled(true);
+                        }
+                    }, 100); // 100毫秒，可以根据需要调整延迟的时间
+                    return;
+                }
 
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+
                                 if (task.isSuccessful()) {
                                     FirebaseUser firebaseUser = mAuth.getCurrentUser();
                                     assert firebaseUser != null;
@@ -122,7 +168,6 @@ public class register extends AppCompatActivity {
                                     User.put("timestamp", FieldValue.serverTimestamp());
 
                                     // 将数据存储到 Firestore
-                                    FirebaseFirestore db = FirebaseFirestore.getInstance();
                                     db.collection("User")
                                             .document(userid)
                                             .set(User)
@@ -135,12 +180,12 @@ public class register extends AppCompatActivity {
                                                         startActivity(intent);
                                                         finish();
                                                     } else {
-                                                        test = findViewById(R.id.test);
                                                         Toast.makeText(register.this, "創建帳號失敗: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                                        test.setText(task.getException().getMessage());
                                                     }
                                                 }
+
                                             });
+
                                 } else {
                                     // 如果注册失败，向用户显示消息
                                     Toast.makeText(register.this, "創建帳號失敗.", Toast.LENGTH_SHORT).show();
