@@ -91,16 +91,16 @@
         android:focusable="true">
 
         <ImageView
-            android:id="@+id/home"
+            android:id="@+id/method"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/draw"
-            android:src="@drawable/home" />
+            android:src="@drawable/list" />
     </androidx.cardview.widget.CardView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="返回主頁"
+        android:text="處理作法"
         android:textColor="@color/white"
         android:textSize = "18sp"
         app:layout_constraintBottom_toBottomOf="parent"

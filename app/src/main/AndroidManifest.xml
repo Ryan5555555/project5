@@ -63,6 +63,9 @@
             android:name=".chattest.MessageActivity"
             android:exported="true">
         </activity>
+        <activity android:name="method"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

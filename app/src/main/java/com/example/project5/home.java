@@ -24,6 +24,7 @@ public class home extends AppCompatActivity {
         ImageView contact = findViewById(R.id.contact);
         ImageView user = findViewById(R.id.user);
         ImageView knowledge = findViewById(R.id.knowledge);
+        ImageView method = findViewById(R.id.method);
 
         photo.setOnClickListener(v -> {
             Intent intent = new Intent();
@@ -46,6 +47,12 @@ public class home extends AppCompatActivity {
         knowledge.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.setClass(home.this, knowledge.class);//目前Activity與目標Activity
+            startActivity(intent);
+        });
+
+        method.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClass(home.this,method.class);//目前Activity與目標Activity
             startActivity(intent);
         });
 
