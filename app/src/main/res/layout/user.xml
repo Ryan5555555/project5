@@ -194,6 +194,7 @@
                                     android:layout_height="wrap_content"
                                     android:drawableStart="@drawable/phonenum"
                                     android:drawablePadding="10dp"
+                                    android:inputType="number"
                                     android:hint="@string/phone_hint" />
                             </com.google.android.material.textfield.TextInputLayout>
 

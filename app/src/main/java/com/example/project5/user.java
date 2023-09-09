@@ -166,6 +166,7 @@ public class user extends AppCompatActivity {
             String new_name = name_edit.getText().toString();
             String new_email = email_edit.getText().toString();
             String new_phone = phone_edit.getText().toString();
+
             String new_address = address_edit.getText().toString();
             String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
             DocumentReference userDocRef = db.collection("User").document(userId);
@@ -194,14 +195,21 @@ public class user extends AppCompatActivity {
             }
 
             if(!phone_edit.getText().toString().isEmpty()) {
-                phone.setText(new_phone);
-                phone.setVisibility(View.VISIBLE);
-                phone_change.setVisibility(View.VISIBLE);
-                phone_layout.setVisibility(View.INVISIBLE);
-                phone_cancel.setVisibility(View.INVISIBLE);
-                Map<String, Object> updatedData = new HashMap<>();
-                updatedData.put("phone", new_phone);
-                userDocRef.update(updatedData);
+                if (new_phone.matches("\\d{10}")) {
+                    phone.setText(new_phone);
+                    phone.setVisibility(View.VISIBLE);
+                    phone_change.setVisibility(View.VISIBLE);
+                    phone_layout.setVisibility(View.INVISIBLE);
+                    phone_cancel.setVisibility(View.INVISIBLE);
+                    Map<String, Object> updatedData = new HashMap<>();
+                    updatedData.put("phone", new_phone);
+                    userDocRef.update(updatedData);
+                } else {
+                    // 电话号码格式无效，显示错误消息
+                    Toast.makeText(user.this, "请输入有效的行動電話號碼格式", Toast.LENGTH_SHORT).show();
+                }
+
+
             }
 
             if(!address_edit.getText().toString().isEmpty()) {

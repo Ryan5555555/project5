@@ -138,6 +138,16 @@ public class register extends AppCompatActivity {
                     }, 100); // 100毫秒，可以根据需要调整延迟的时间
                     return;
                 }
+                else if (phone.matches("\\d{10}")) {
+                    Toast.makeText(register.this, "行動電話號碼格式不正確，請重新輸入", Toast.LENGTH_SHORT).show();
+                    v.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            register.setEnabled(true);
+                        }
+                    }, 100); // 100毫秒，可以根据需要调整延迟的时间
+                    return;
+                }
                 else if (TextUtils.isEmpty(address)) {
                     Toast.makeText(register.this, "您尚未輸入地址，請重新輸入", Toast.LENGTH_SHORT).show();
                     v.postDelayed(new Runnable() {
@@ -148,6 +158,7 @@ public class register extends AppCompatActivity {
                     }, 100); // 100毫秒，可以根据需要调整延迟的时间
                     return;
                 }
+
 
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
