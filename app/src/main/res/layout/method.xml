@@ -86,18 +86,20 @@
                     android:id="@+id/textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="作法管理"
+                    android:text="病害處理作法管理"
                     android:textSize="30dp"
                     android:textStyle="bold"/>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/C1"
-                    android:layout_width="200dp"
+                    android:layout_width="175dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
-                    android:layout_below="@id/textview">
+                    android:layout_below="@id/textview"
+                    android:layout_alignParentLeft="true">
                     <RelativeLayout
                         android:id="@+id/R1"
                         android:layout_width="match_parent"
@@ -125,13 +127,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/C2"
-                    android:layout_width="200dp"
+                    android:layout_width="175dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="3dp"
                     app:cardCornerRadius="20dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
                     android:layout_below="@id/textview"
-                    android:layout_toRightOf="@id/C1">
+                    android:layout_alignParentRight="true">
                     <RelativeLayout
                         android:id="@+id/R2"
                         android:layout_width="match_parent"
@@ -158,10 +161,11 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/C3"
-                    android:layout_width="200dp"
+                    android:layout_width="175dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
                     android:layout_below="@id/C1">
                     <RelativeLayout
@@ -191,10 +195,11 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/C4"
-                    android:layout_width="200dp"
+                    android:layout_width="175dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
                     android:layout_below="@id/C2"
                     android:layout_toRightOf="@id/C3">
@@ -224,10 +229,11 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/C5"
-                    android:layout_width="200dp"
+                    android:layout_width="175dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
                     android:layout_below="@id/C3">
                     <RelativeLayout

@@ -44,7 +44,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class photo extends AppCompatActivity {
     Button btHigh ;
     TextView result;
-    ImageView photo,imageView;
+    ImageView photo,imageView,choose;
 
     int imageSize = 224;
 
@@ -63,6 +63,7 @@ public class photo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.photo);
+        choose = findViewById(R.id.choose);
         photo = findViewById(R.id.photo);
         imageView =findViewById(R.id.imageView);
         result = findViewById(R.id.result);
@@ -87,6 +88,15 @@ public class photo extends AppCompatActivity {
                         photo.setEnabled(true);
                     }
                 }, 100); // 1000毫秒 = 1秒，可以根据需要调整延迟的时间
+            }
+        });
+
+        choose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_PICK,null);
+                intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
+                startActivityForResult(intent,2);
             }
         });
 
@@ -235,7 +245,7 @@ public class photo extends AppCompatActivity {
                     maxPos =i;
                 }
             }
-            String[] classes ={"正常葉片","稻熱病","胡麻葉枯病","白葉枯病","褐調葉枯病"};
+            String[] classes ={"正常葉片","稻熱病","胡麻葉枯病","白葉枯病","褐條葉枯病"};
 
             String s = "";
             for (int i = 0;i<classes.length;i++) {
@@ -265,5 +275,13 @@ public class photo extends AppCompatActivity {
             classifyImage(image);
         }
         super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2){
+            Log.e(this.getClass().getName(),"Result:" + data.toString());
+            if (data != null){
+                Uri uri = data.getData();
+                imageView.setImageURI(uri);
+                Log.e(this.getClass().getName(),"Uri:"+String.valueOf(uri));
+            }
+        }
     }
 }

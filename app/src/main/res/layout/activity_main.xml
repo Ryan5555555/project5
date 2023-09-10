@@ -37,7 +37,7 @@
         android:id="@+id/textView3"
         android:layout_width="340dp"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/draw2"
         android:textColor="@color/primarydark"
         android:text="@string/title_name"
@@ -119,7 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
-                    android:layout_marginStart="80dp"
+                    android:layout_marginStart="30dp"
                     android:text="@string/register" />
             </LinearLayout>
 

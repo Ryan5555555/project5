@@ -67,7 +67,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
                         <FrameLayout
-                            android:layout_width="300dp"
+                            android:layout_width="250dp"
                             android:layout_height="wrap_content">
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/name_layout"
@@ -124,7 +124,7 @@
                     android:layout_height="match_parent"
                       android:orientation="horizontal">
                     <FrameLayout
-                        android:layout_width="300dp"
+                        android:layout_width="250dp"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/email_layout"
@@ -180,7 +180,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
                         <FrameLayout
-                            android:layout_width="300dp"
+                            android:layout_width="250dp"
                             android:layout_height="wrap_content">
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/phone_layout"
@@ -237,7 +237,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
                         <FrameLayout
-                            android:layout_width="300dp"
+                            android:layout_width="250dp"
                             android:layout_height="wrap_content">
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/address_layout"
@@ -306,7 +306,7 @@
                     android:id="@+id/save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="40dp"
                     android:layout_marginTop="60dp"
                     android:text="@string/save" />
 
