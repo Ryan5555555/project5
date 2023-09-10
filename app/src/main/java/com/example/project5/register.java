@@ -138,7 +138,7 @@ public class register extends AppCompatActivity {
                     }, 100); // 100毫秒，可以根据需要调整延迟的时间
                     return;
                 }
-                else if (phone.matches("\\d{10}")) {
+                else if (phone.matches("\\d{10}") == false) {
                     Toast.makeText(register.this, "行動電話號碼格式不正確，請重新輸入", Toast.LENGTH_SHORT).show();
                     v.postDelayed(new Runnable() {
                         @Override

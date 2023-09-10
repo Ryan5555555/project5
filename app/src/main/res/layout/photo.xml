@@ -37,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:background="@color/grey"
             android:gravity="center"
             android:textStyle="bold"
@@ -99,30 +99,6 @@
             android:background="@drawable/draw"
             android:src="@drawable/photo" />
     </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        app:cardCornerRadius="100dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2">
-
-        <ImageView
-            android:id="@+id/choose"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/draw"
-            android:src="@drawable/photochoose" />
-    </androidx.cardview.widget.CardView>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
