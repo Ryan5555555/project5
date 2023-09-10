@@ -1,11 +1,16 @@
 package com.example.project5.chattest;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +32,7 @@ import java.util.List;
 
 public class MessageActivity extends AppCompatActivity {
 
-    ImageView btn_send,home;
+    ImageView btn_send,home,choose;
     EditText text_send;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -45,6 +50,7 @@ public class MessageActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance(); // 初始化 FirebaseAuth 物件
         user = auth.getCurrentUser(); // 獲取當前用戶
 
+        choose = findViewById(R.id.choose);
         btn_send = findViewById(R.id.btn_send);
         text_send = findViewById(R.id.text_send);
         home = findViewById(R.id.home);
@@ -67,6 +73,15 @@ public class MessageActivity extends AppCompatActivity {
             Intent intent = new Intent();
             intent.setClass(com.example.project5.chattest.MessageActivity.this, home.class);//目前Activity與目標Activity
             startActivity(intent);
+        });
+
+        choose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_PICK,null);
+                intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
+                startActivityForResult(intent,2);
+            }
         });
 
         // 步驟1 按發送按鈕
@@ -129,5 +144,17 @@ public class MessageActivity extends AppCompatActivity {
                         recyclerView.setAdapter(messageAdapter);
                     }
                 });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2){
+            Log.e(this.getClass().getName(),"Result:" + data.toString());
+            if (data != null){
+                Uri uri = data.getData();
+                Log.e(this.getClass().getName(),"Uri:"+String.valueOf(uri));
+            }
+        }
     }
 }

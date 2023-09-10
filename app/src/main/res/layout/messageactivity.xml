@@ -72,11 +72,11 @@
 
         <EditText
             android:id="@+id/text_send"
-            android:layout_width="match_parent"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:hint="請輸入文字"
+            android:layout_centerVertical="true"
             android:layout_toStartOf="@id/btn_send"
-            android:layout_centerVertical="true" />
+            android:hint="請輸入文字" />
         <ImageButton
             android:id="@+id/btn_send"
             android:background="@drawable/send"
@@ -84,6 +84,13 @@
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"/>
+
+        <ImageView
+            android:id="@+id/choose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/photochoose"
+            android:layout_alignParentLeft="true"/>
     </RelativeLayout>
 
 </RelativeLayout>
