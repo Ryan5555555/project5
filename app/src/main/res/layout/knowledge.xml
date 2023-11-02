@@ -83,14 +83,12 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/C1"
-                android:layout_width="175dp"
+                android:layout_width="200dp"
                 android:layout_height="250dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
                 app:cardCornerRadius="20dp"
-                android:layout_below="@id/textview"
-                android:layout_alignParentLeft="true">
+                android:layout_below="@id/textview">
                 <RelativeLayout
                     android:id="@+id/R1"
                     android:layout_width="match_parent"
@@ -100,7 +98,7 @@
 
                     <ImageView
                         android:id="@+id/R1image"
-                        android:layout_width="match_parent"
+                        android:layout_width="150dp"
                         android:layout_height="100dp"
                         app:srcCompat="@drawable/riceblast" />
                     <TextView
@@ -119,14 +117,13 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/C2"
-                android:layout_width="175dp"
+                android:layout_width="200dp"
                 android:layout_height="250dp"
                 android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp"
                 android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
+                app:cardCornerRadius="20dp"
                 android:layout_below="@id/textview"
-                android:layout_alignParentRight="true">
+                android:layout_toRightOf="@id/C1">
                 <RelativeLayout
                     android:id="@+id/R2"
                     android:layout_width="match_parent"
@@ -136,7 +133,7 @@
 
                     <ImageView
                         android:id="@+id/R2image"
-                        android:layout_width="match_parent"
+                        android:layout_width="150dp"
                         android:layout_height="100dp"
                         app:srcCompat="@drawable/bacterialleafblight" />
                     <TextView
@@ -154,11 +151,10 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/C3"
-                    android:layout_width="175dp"
+                    android:layout_width="200dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="3dp"
-                    android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
                     android:layout_below="@id/C1">
                     <RelativeLayout
@@ -170,7 +166,7 @@
 
                         <ImageView
                             android:id="@+id/R3image"
-                            android:layout_width="match_parent"
+                            android:layout_width="150dp"
                             android:layout_height="100dp"
                             app:srcCompat="@drawable/brownspot" />
                         <TextView
@@ -189,11 +185,10 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/C4"
-                    android:layout_width="175dp"
+                    android:layout_width="200dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="3dp"
-                    android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
                     android:layout_below="@id/C2"
                     android:layout_toRightOf="@id/C3">
@@ -206,7 +201,7 @@
 
                         <ImageView
                             android:id="@+id/R4image"
-                            android:layout_width="match_parent"
+                            android:layout_width="150dp"
                             android:layout_height="100dp"
                             app:srcCompat="@drawable/narrowbrownleafspot" />
                         <TextView
@@ -224,11 +219,10 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/C5"
-                    android:layout_width="175dp"
+                    android:layout_width="200dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="3dp"
-                    android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
                     android:layout_below="@id/C3">
                     <RelativeLayout
@@ -240,7 +234,7 @@
 
                         <ImageView
                             android:id="@+id/R5image"
-                            android:layout_width="match_parent"
+                            android:layout_width="150dp"
                             android:layout_height="100dp"
                             app:srcCompat="@drawable/sheathblight" />
                         <TextView

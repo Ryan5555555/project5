@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,7 +56,6 @@ public class knowledge extends AppCompatActivity{
             intent.setClass(knowledge.this, home.class);//目前Activity與目標Activity
             startActivity(intent);
         });
-
 
         //彈出視窗
         R1.setOnClickListener(new View.OnClickListener() {

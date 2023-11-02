@@ -30,20 +30,13 @@
             app:layout_constraintStart_toStartOf="@+id/textView4" />
 
         <TextView
-            android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
             android:layout_weight="1"
             android:background="@color/grey"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:text="" />
+            android:gravity="center" />
 
 
         <TextView
@@ -56,6 +49,7 @@
             app:layout_constraintStart_toStartOf="@+id/textView4" />
 
     </LinearLayout>
+
     <!--home返回主頁-->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"

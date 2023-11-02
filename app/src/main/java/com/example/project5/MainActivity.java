@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                login.setEnabled(false);
+                login.setEnabled(false);
                 String email, password;
                 email = String.valueOf(editTextEmail.getText());
                 password = String.valueOf(getEditTextPassword.getText());
@@ -111,13 +111,13 @@ public class MainActivity extends AppCompatActivity {
 
                         });
                 // 在点击后设置按钮为灰色并延迟一段时间后恢复
-//                login.setEnabled(false);
-//                v.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        login.setEnabled(true);
-//                    }
-//                }, 100); // 1000毫秒 = 1秒，可以根据需要调整延迟的时间
+                login.setEnabled(false);
+                v.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        login.setEnabled(true);
+                    }
+                }, 100); // 1000毫秒 = 1秒，可以根据需要调整延迟的时间
                  }
         });
     }
