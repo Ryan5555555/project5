@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:background="@color/grey"
+            android:background="@color/light_green"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/textView4" />
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/dark_grey"
+            android:background="@color/dark_green"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/textView4" />
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="600dp"
             android:layout_below="@id/textview"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -79,55 +79,43 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/result"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/dark_green"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="稻熱病"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+
+
+                    <TextView
+                        android:id="@+id/confidence"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@color/dark_green"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="xx%"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+
+
                 <ImageView
                     android:id="@+id/img"
                     android:layout_width="400dp"
                     android:layout_height="180dp"
                     android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
                     app:srcCompat="@drawable/riceblast" />
 
-                  <LinearLayout
-                      android:layout_width="match_parent"
-                      android:layout_height="match_parent">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_margin="10dp"
-                            android:background="#f0f0f0"
-                            android:text="辨識結果:"
-                            android:textSize="36sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:id="@+id/result"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_margin="10dp"
-                            android:text="稻熱病"
-                            android:textSize="36sp" />
-                  </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_margin="10dp"
-                        android:background="#f0f0f0"
-                        android:text="信賴度:"
-                        android:textSize="36sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/confidence"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_margin="10dp"
-                        android:text="xx%"
-                        android:textSize="36sp" />
-                </LinearLayout>
 
                 <TextView
                     android:id="@+id/describe"
@@ -140,15 +128,6 @@
                     android:text="@string/rice_blast"
                     android:textSize="24sp"
                     android:lineHeight="40sp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:background="@color/grey"
-                    android:textSize="24sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
-                    app:layout_constraintStart_toStartOf="@+id/textView4" />
 
             </LinearLayout>
         </ScrollView>

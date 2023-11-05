@@ -2,7 +2,13 @@ package com.example.project5;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,9 +18,6 @@ import com.example.project5.chattest.MessageActivity;
 
 
 public class home extends AppCompatActivity {
-    TextView test;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,36 @@ public class home extends AppCompatActivity {
         ImageView user = findViewById(R.id.user);
         ImageView knowledge = findViewById(R.id.knowledge);
         ImageView method = findViewById(R.id.method);
+
+        ImageView tutorial = findViewById(R.id.tutorial);
+
+        tutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+
+                View viewPopupwindow = layoutInflater.inflate(R.layout.tutorial_popup, null);
+
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow, 1000, 1600, true);
+
+                Button close = viewPopupwindow.findViewById(R.id.close);
+
+                close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (popupWindow != null && popupWindow.isShowing()) {
+                            popupWindow.dismiss(); // 关闭弹出窗口
+                        }
+                    }
+                });
+
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, -100);
+            }
+        });
+
+
+
+
 
         photo.setOnClickListener(v -> {
             Intent intent = new Intent();

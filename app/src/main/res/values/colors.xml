@@ -4,6 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#6F7378</color>
     <color name="dark_grey">#5A5A5A</color>
+    <color name="light_grey">#f0f0f0</color>
     <color name="primarydark">#99000000</color>
-
+    <color name="light_green">#ddf3e9</color>
+    <color name="green2">#9be15d</color>
+    <color name="dark_green">#63746c</color>
 </resources>

@@ -23,27 +23,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
-            android:background="@color/grey"
+            android:layout_weight="6"
+            android:background="@color/light_green"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/textView4" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_weight="1"
-            android:background="@color/grey"
-            android:gravity="center" />
-
-
-        <TextView
-            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/dark_grey"
+            android:background="@color/dark_green"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/textView4" />

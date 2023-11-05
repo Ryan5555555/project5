@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="6"
-            android:background="@color/grey"
+            android:background="@color/light_green"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/textView4" />
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/dark_grey"
+            android:background="@color/dark_green"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/textView4" />
@@ -84,11 +84,15 @@
 
                 <TextView
                     android:id="@+id/textview"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="#63746c"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="46sp"
                     android:text="病害處理作法管理"
-                    android:textSize="30dp"
-                    android:textStyle="bold"/>
+                    android:gravity="center"/>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/C1"

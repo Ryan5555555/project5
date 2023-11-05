@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:background="@color/grey"
+            android:background="@color/light_green"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/textView4" />
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/dark_grey"
+            android:background="@color/dark_green"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/textView4" />
@@ -48,13 +48,15 @@
 
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
+                android:layout_margin="20dp"
+                android:background="@color/dark_green"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="48sp"
-                android:text="@string/user_title"/>
+                android:text="@string/user_title"
+                android:gravity="center"/>
 
 
                 <LinearLayout
@@ -67,7 +69,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
                         <FrameLayout
-                            android:layout_width="250dp"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content">
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/name_layout"
@@ -87,10 +89,10 @@
 
                             <TextView
                                 android:id="@+id/name"
-                                android:layout_width="wrap_content"
+                                android:layout_width="270dp"
                                 android:layout_height="match_parent"
                                 android:text="@string/name"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 android:drawableStart="@drawable/person"
                                 android:gravity="center_vertical"
                                 android:layout_marginStart="32dp"
@@ -105,14 +107,14 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:src="@drawable/pen"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="15dp"/>
 
                             <ImageButton
                                 android:id="@+id/name_cancel"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:src="@drawable/cancel"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="15dp"
                                 android:visibility="invisible"/>
 
                         </FrameLayout>
@@ -124,7 +126,7 @@
                     android:layout_height="match_parent"
                       android:orientation="horizontal">
                     <FrameLayout
-                        android:layout_width="250dp"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/email_layout"
@@ -144,12 +146,12 @@
 
                         <TextView
                             android:id="@+id/email"
-                            android:layout_width="wrap_content"
+                            android:layout_width="270dp"
                             android:layout_height="match_parent"
                             android:text="@string/email"
                             android:drawableStart="@drawable/email"
                             android:gravity="center_vertical"
-                            android:textSize="16dp"
+                            android:textSize="20dp"
                             android:layout_marginStart="32dp"
                             android:layout_marginTop="9dp"
                             android:drawablePadding="10dp"/>
@@ -162,14 +164,14 @@
                               android:layout_width="40dp"
                               android:layout_height="40dp"
                               android:src="@drawable/pen"
-                              android:layout_marginTop="5dp"/>
+                              android:layout_marginTop="15dp"/>
 
                           <ImageButton
                               android:id="@+id/email_cancel"
                               android:layout_width="40dp"
                               android:layout_height="40dp"
                               android:src="@drawable/cancel"
-                              android:layout_marginTop="5dp"
+                              android:layout_marginTop="15dp"
                               android:visibility="invisible"/>
 
                       </FrameLayout>
@@ -180,7 +182,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
                         <FrameLayout
-                            android:layout_width="250dp"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content">
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/phone_layout"
@@ -201,10 +203,10 @@
 
                             <TextView
                                 android:id="@+id/phone"
-                                android:layout_width="wrap_content"
+                                android:layout_width="270dp"
                                 android:layout_height="match_parent"
                                 android:text="@string/phone"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 android:drawableStart="@drawable/phonenum"
                                 android:gravity="center_vertical"
                                 android:layout_marginStart="32dp"
@@ -219,14 +221,14 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:src="@drawable/pen"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="15dp"/>
 
                             <ImageButton
                                 android:id="@+id/phone_cancel"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:src="@drawable/cancel"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="15dp"
                                 android:visibility="invisible"/>
 
                         </FrameLayout>
@@ -237,7 +239,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
                         <FrameLayout
-                            android:layout_width="250dp"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content">
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/address_layout"
@@ -257,10 +259,10 @@
 
                             <TextView
                                 android:id="@+id/address"
-                                android:layout_width="wrap_content"
+                                android:layout_width="270dp"
                                 android:layout_height="match_parent"
                                 android:text="@string/address"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 android:drawableStart="@drawable/home"
                                 android:gravity="center_vertical"
                                 android:layout_marginStart="32dp"
@@ -275,14 +277,14 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:src="@drawable/pen"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="15dp"/>
 
                             <ImageButton
                                 android:id="@+id/address_cancel"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:src="@drawable/cancel"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="15dp"
                                 android:visibility="invisible"/>
 
                         </FrameLayout>
@@ -298,16 +300,24 @@
                     android:id="@+id/logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="60dp"
                     android:layout_marginTop="60dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:backgroundTint="@color/dark_green"
                     android:text="@string/logout" />
 
                 <Button
                     android:id="@+id/save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="60dp"
                     android:layout_marginTop="60dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:backgroundTint="@color/dark_green"
                     android:text="@string/save" />
 
             </LinearLayout>
