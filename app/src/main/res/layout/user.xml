@@ -291,7 +291,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -300,27 +300,35 @@
                     android:id="@+id/logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="60dp"
                     android:layout_marginTop="60dp"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:backgroundTint="@color/dark_green"
-                    android:text="@string/logout" />
+                    android:text="@string/logout"
+                    android:layout_marginRight="30dp"
+                    android:layout_toLeftOf="@+id/block"/>
+
+                <TextView
+                    android:id="@+id/block"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"/>
 
                 <Button
                     android:id="@+id/save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="60dp"
                     android:layout_marginTop="60dp"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:backgroundTint="@color/dark_green"
-                    android:text="@string/save" />
+                    android:text="@string/save"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@+id/block"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
