@@ -1,6 +1,7 @@
 package com.example.project5.chattest;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,7 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
         Chat chat = mChat.get(position);
 
         holder.show_message.setText(chat.getMessage());
+        holder.show_img.setImageURI(Uri.parse(chat.getImg()));
 
         // 格式化时间戳为台湾时间
         if (chat.getTimestamp() != null) {
@@ -79,6 +81,7 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
         } else {
             holder.time.setText("時間錯誤");
         }
+        
     }
 
     @Override
@@ -88,6 +91,7 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
 
     public  class  ViewHolder extends RecyclerView.ViewHolder{
         public TextView show_message;
+        public ImageView show_img;
         public TextView time;
         public ImageView profile_image;
 
@@ -95,6 +99,7 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
             super( itemView);
             time = itemView.findViewById(R.id.time);
             show_message = itemView.findViewById(R.id.show_message);
+            show_img = itemView.findViewById(R.id.show_img);
             profile_image = itemView.findViewById(R.id.profile_image);
         }
     }
