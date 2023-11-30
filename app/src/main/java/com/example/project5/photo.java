@@ -61,9 +61,7 @@ public class photo extends AppCompatActivity {
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK,null);
-                intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
-                startActivityForResult(intent,2);
+                openGallery();
             }
         });
 
@@ -73,6 +71,12 @@ public class photo extends AppCompatActivity {
             intent.setClass(photo.this, home.class);//目前Activity與目標Activity
             startActivity(intent);
         });
+    }
+
+
+    private void openGallery() {
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(galleryIntent, 3);
     }
 
     public void classifyImage(Bitmap image){
@@ -133,6 +137,8 @@ public class photo extends AppCompatActivity {
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == 1 && resultCode == RESULT_OK) {
             Bitmap image=(Bitmap) data.getExtras().get("data");
             int dimension = Math.min(image.getWidth(),image.getHeight());
@@ -141,13 +147,30 @@ public class photo extends AppCompatActivity {
             image = Bitmap.createScaledBitmap(image,imageSize,imageSize,false);
             classifyImage(image);
         }
-        super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == 2){
             Log.e(this.getClass().getName(),"Result:" + data.toString());
             if (data != null){
                 Uri uri = data.getData();
                 imageView.setImageURI(uri);
                 Log.e(this.getClass().getName(),"Uri:"+String.valueOf(uri));
+            }
+        }
+
+        if (requestCode == 3 && resultCode == RESULT_OK && data != null) {
+            Uri selectedImageUri = data.getData();
+
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri);
+
+                int dimension = Math.min(bitmap.getWidth(),bitmap.getHeight());
+                bitmap = ThumbnailUtils.extractThumbnail(bitmap,dimension,dimension);
+                imageView.setImageBitmap(bitmap);
+                bitmap = Bitmap.createScaledBitmap(bitmap,imageSize,imageSize,false);
+                classifyImage(bitmap);
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }

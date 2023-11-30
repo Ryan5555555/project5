@@ -78,8 +78,7 @@ public class MessageActivity extends AppCompatActivity {
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK,null);
-                intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent,2);
             }
         });
@@ -88,7 +87,7 @@ public class MessageActivity extends AppCompatActivity {
         btn_send.setOnClickListener(v -> {
             String msg = text_send.getText().toString(); // msg 為發送框內輸入的文字
             if (!msg.equals("")) {
-                sendMessage(user.getUid(), managerid, msg);
+                sendMessage(user.getUid(), managerid, msg,null);
             } else {
                 Toast.makeText(MessageActivity.this, "尚未輸入", Toast.LENGTH_SHORT).show();
             }
@@ -97,7 +96,7 @@ public class MessageActivity extends AppCompatActivity {
     }
 
     // 步驟2
-    private void sendMessage(String sender, String receiver, String message) {
+    private void sendMessage(String sender, String receiver, String message, Uri imageUri) {
         // 在這裡添加將訊息寫入 Firestore 的程式碼
         // 您可以使用 FirebaseFirestore 的 collection 和 document 來組織資料
         HashMap<String, Object> hashmap = new HashMap<>();
@@ -106,6 +105,11 @@ public class MessageActivity extends AppCompatActivity {
         hashmap.put("receiver", receiver);
         hashmap.put("message", message);
         hashmap.put("timestamp", FieldValue.serverTimestamp());
+
+        if (imageUri != null)
+        {
+            hashmap.put("image", imageUri.toString());
+        }
 
         // 創建一個新的訊息文件
         // 將訊息寫入到 Firestore 的 "Chats" 集合中
@@ -146,6 +150,11 @@ public class MessageActivity extends AppCompatActivity {
                 });
     }
 
+    private void sendImageMessage(String sender, String receiver, Uri imageUri) {
+        // 將圖片的 Uri 轉換為字串並發送消息
+        sendMessage(sender, receiver, "", imageUri);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -154,6 +163,7 @@ public class MessageActivity extends AppCompatActivity {
             if (data != null){
                 Uri uri = data.getData();
                 Log.e(this.getClass().getName(),"Uri:"+String.valueOf(uri));
+                sendImageMessage(user.getUid(), managerid, uri);
             }
         }
     }
