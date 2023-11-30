@@ -43,7 +43,7 @@ public class register extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(),user.class);
+            Intent intent = new Intent(getApplicationContext(),home.class);
             startActivity(intent);
             finish();
         }
@@ -187,7 +187,7 @@ public class register extends AppCompatActivity {
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()) {
                                                         // 在此处执行您想要的操作，例如跳转到用户界面
-                                                        Intent intent = new Intent(getApplicationContext(), user.class);
+                                                        Intent intent = new Intent(getApplicationContext(), home.class);
                                                         startActivity(intent);
                                                         finish();
                                                     } else {

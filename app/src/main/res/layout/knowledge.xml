@@ -91,7 +91,7 @@
                     android:layout_width="175dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="3dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
                     android:layout_below="@id/textview"
@@ -129,7 +129,7 @@
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="20dp"
                     android:layout_marginLeft="3dp"
-                    android:layout_marginRight="3dp"
+                    android:layout_marginRight="30dp"
                     android:layout_below="@id/textview"
                     android:layout_alignParentRight="true">
                     <RelativeLayout
@@ -162,7 +162,7 @@
                     android:layout_width="175dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="3dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
                     android:layout_below="@id/C1">
@@ -197,29 +197,31 @@
                     android:layout_width="175dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="3dp"
+                    android:layout_marginLeft="13dp"
                     android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
                     android:layout_below="@id/C2"
                     android:layout_toRightOf="@id/C3">
+
                     <RelativeLayout
                         android:id="@+id/R4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
                         <ImageView
                             android:id="@+id/R4image"
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
                             app:srcCompat="@drawable/narrowbrownleafspot" />
+
                         <TextView
                             android:id="@+id/t4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="褐條葉枯病"
                             android:layout_centerVertical="true"
+                            android:text="褐條葉枯病"
                             android:textSize="30sp"
                             android:textStyle="bold" />
 
@@ -232,7 +234,7 @@
                     android:layout_width="175dp"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="3dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="3dp"
                     app:cardCornerRadius="20dp"
                     android:layout_below="@id/C3">

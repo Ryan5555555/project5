@@ -2,9 +2,11 @@ package com.example.project5;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
+import androidx.core.text.HtmlCompat;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -29,7 +31,8 @@ public class home extends AppCompatActivity {
         ImageView knowledge = findViewById(R.id.knowledge);
         ImageView method = findViewById(R.id.method);
 
-        ImageView tutorial = findViewById(R.id.tutorial);
+        TextView tutorial = findViewById(R.id.tutorial);
+        TextView popular_science = findViewById(R.id.popular_science);
 
         tutorial.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +44,7 @@ public class home extends AppCompatActivity {
                 PopupWindow popupWindow = new PopupWindow(viewPopupwindow, 1000, 1600, true);
 
                 Button close = viewPopupwindow.findViewById(R.id.close);
+
 
                 close.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -55,7 +59,33 @@ public class home extends AppCompatActivity {
             }
         });
 
+        popular_science.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 
+                View viewPopupwindow = layoutInflater.inflate(R.layout.popular_science_popup, null);
+
+                PopupWindow popupWindow = new PopupWindow(viewPopupwindow, 1000, 1600, true);
+
+                Button close = viewPopupwindow.findViewById(R.id.close);
+                TextView popular_science1 = viewPopupwindow.findViewById(R.id.popular_science_1);
+                TextView popular_science2 = viewPopupwindow.findViewById(R.id.popular_science_2);
+                popular_science1.setText(HtmlCompat.fromHtml(getString(R.string.popular_science_1), HtmlCompat.FROM_HTML_MODE_LEGACY));
+                popular_science2.setText(HtmlCompat.fromHtml(getString(R.string.popular_science_2), HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+                close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (popupWindow != null && popupWindow.isShowing()) {
+                            popupWindow.dismiss(); // 关闭弹出窗口
+                        }
+                    }
+                });
+
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, -100);
+            }
+        });
 
 
 
