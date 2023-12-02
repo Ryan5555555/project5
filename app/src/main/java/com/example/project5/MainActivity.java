@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
 //        如果有帳號就直接進去
         if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(),user.class);
+            Intent intent = new Intent(getApplicationContext(),home.class);
             startActivity(intent);
             finish();
         }
@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         register = findViewById(R.id.register);
         login = findViewById(R.id.login);
 
+        GlobalVariable globalVariable = (GlobalVariable) getApplication();
+        globalVariable.loadSwitchState(this);
 //        findViewById應該放在 setContentView(R.layout.activity_main); 之後
 
 
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "成功登入", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), user.class);
+                                    Intent intent = new Intent(getApplicationContext(), home.class);
                                     startActivity(intent);
                                     finish();
                                 } else {

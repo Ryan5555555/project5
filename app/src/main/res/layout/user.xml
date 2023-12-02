@@ -31,7 +31,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="620dp"
         android:layout_marginTop="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
@@ -40,6 +40,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/white"
         app:layout_constraintTop_toTopOf="@+id/linearLayout">
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -289,9 +293,149 @@
 
                         </FrameLayout>
                     </LinearLayout>
+                    <!--                   period-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <FrameLayout
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/period_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:visibility="invisible">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/period_edit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/period"
+                                    android:drawablePadding="10dp"
+                                    android:hint="@string/period_hint" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/period"
+                                android:layout_width="270dp"
+                                android:layout_height="match_parent"
+                                android:text="第幾期稻作"
+                                android:textSize="20dp"
+                                android:drawableStart="@drawable/period"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginTop="9dp"
+                                android:drawablePadding="10dp"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageButton
+                                android:id="@+id/period_change"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/pen"
+                                android:layout_marginTop="15dp"/>
+
+                            <ImageButton
+                                android:id="@+id/period_cancel"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/cancel"
+                                android:layout_marginTop="15dp"
+                                android:visibility="invisible"/>
+
+                        </FrameLayout>
+                    </LinearLayout>
+                    <!--                   Variety-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <FrameLayout
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/variety_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:visibility="invisible">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/variety_edit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/list"
+                                    android:drawablePadding="10dp"
+                                    android:hint="@string/variety_hint" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/variety"
+                                android:layout_width="270dp"
+                                android:layout_height="match_parent"
+                                android:text="稻米品種"
+                                android:textSize="20dp"
+                                android:drawableStart="@drawable/list"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginTop="9dp"
+                                android:drawablePadding="10dp"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageButton
+                                android:id="@+id/variety_change"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/pen"
+                                android:layout_marginTop="15dp"/>
+
+                            <ImageButton
+                                android:id="@+id/variety_cancel"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/cancel"
+                                android:layout_marginTop="15dp"
+                                android:visibility="invisible"/>
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                    <Switch
+                        android:id="@+id/switch1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:textSize="20dp"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/grass"
+                        android:text="慣行農法"
+                        android:textOn="有機農法"
+                        android:textOff="慣行農法"  />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="有機農法"
+                            android:textSize="22dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
                 </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -300,37 +444,31 @@
                     android:id="@+id/logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="30dp"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:backgroundTint="@color/dark_green"
-                    android:text="@string/logout"
-                    android:layout_marginRight="30dp"
-                    android:layout_toLeftOf="@+id/block"/>
-
-                <TextView
-                    android:id="@+id/block"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"/>
+                    android:text="@string/logout" />
 
                 <Button
                     android:id="@+id/save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="30dp"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:backgroundTint="@color/dark_green"
-                    android:text="@string/save"
-                    android:layout_marginLeft="30dp"
-                    android:layout_toRightOf="@+id/block"/>
+                    android:text="@string/save" />
 
-            </RelativeLayout>
 
+
+            </LinearLayout>
         </LinearLayout>
+        </ScrollView>
     </androidx.cardview.widget.CardView>
 
     <!--home返回主頁-->
