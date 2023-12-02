@@ -1,6 +1,8 @@
 package com.example.project5;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,6 +24,9 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("method", Context.MODE_PRIVATE);
+        global.method = sharedPreferences.getInt("method",0);
 
         ImageView photo = findViewById(R.id.photo);
         ImageView contact = findViewById(R.id.contact);

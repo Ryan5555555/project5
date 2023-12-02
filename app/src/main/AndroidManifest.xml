@@ -71,6 +71,10 @@
         <activity android:name=".result"
             android:exported="true">
         </activity>
+
+        <activity android:name=".method_enter"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
