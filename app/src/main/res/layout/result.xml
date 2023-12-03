@@ -136,7 +136,16 @@
                     android:padding="10dp"
                     android:text="@string/rice_blast"
                     android:textSize="24sp"
-                    android:lineHeight="40sp"/>
+                    android:lineHeight="40sp"
+                    android:textColor="@color/black"/>
+                <Button
+                    android:id="@+id/method"
+                    android:layout_width="275dp"
+                    android:layout_height="wrap_content"
+                    android:text="新增到管理作法"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button"/>
 
                 <TextView
                     android:layout_width="match_parent"

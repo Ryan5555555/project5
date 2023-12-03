@@ -1,7 +1,10 @@
 package com.example.project5;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.ImageView;
@@ -13,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class result extends AppCompatActivity{
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,14 @@ public class result extends AppCompatActivity{
         TextView confidence = findViewById(R.id.confidence);
         TextView describe = findViewById(R.id.describe);
         ImageView img =findViewById(R.id.img);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("method", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        Boolean check = true;
+        Button method = findViewById(R.id.method);
+        method.setEnabled(true);
+
 
         ImageView home = findViewById(R.id.home);
         home.setOnClickListener(v -> {
@@ -66,6 +76,29 @@ public class result extends AppCompatActivity{
             describe.setText(Html.fromHtml(getString(R.string.narrow_brown_spot)));
         }
         else
-        {Toast.makeText(getApplicationContext(), "辨識跳轉出錯，請填系工作團隊", Toast.LENGTH_SHORT).show();}
+        {Toast.makeText(getApplicationContext(), "辨識跳轉出錯，請填系工作團隊", Toast.LENGTH_SHORT).show(); check = false;}
+
+        Boolean finalCheck = check;
+        method.setOnClickListener(v -> {
+            if (finalCheck){
+                int methodnum = sharedPreferences.getInt("method", 0);
+                if(methodnum == 5){Toast.makeText(getApplicationContext(), "收藏已滿(收藏上限為五)!", Toast.LENGTH_SHORT).show();}
+                else{
+                    global.method+=1;
+
+                    editor.putInt("method",global.method);
+                    editor.putString(Integer.toString(global.method), result_name);
+                    // 提交更改
+                    editor.apply();
+
+                    Intent intent_M = new Intent();
+                    intent_M.setClass(result.this, method.class);
+                    startActivity(intent_M);
+
+                    method.setEnabled(false);
+                }
+            }
+            else{Toast.makeText(getApplicationContext(), "辨識跳轉出錯，請填系工作團隊", Toast.LENGTH_SHORT).show();}
+        });
     }
 }
