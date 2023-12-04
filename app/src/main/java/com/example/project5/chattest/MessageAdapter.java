@@ -7,11 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project5.R;
+import com.example.project5.chat;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -52,8 +54,11 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
         Chat chat = mChat.get(position);
 
         holder.show_message.setText(chat.getMessage());
-        holder.show_img.setImageURI(Uri.parse(chat.getImg()));
-
+        if (chat.getImg() != null) {
+            holder.show_img.setImageURI(Uri.parse(chat.getImg()));
+        } else {
+            Toast.makeText(mContext, "尚未輸入圖片", Toast.LENGTH_SHORT).show();
+        }
         // 格式化时间戳为台湾时间
         if (chat.getTimestamp() != null) {
             SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
