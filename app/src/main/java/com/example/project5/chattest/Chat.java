@@ -1,15 +1,17 @@
 package com.example.project5.chattest;
 
+import android.net.Uri;
+
 import com.google.firebase.Timestamp;
 
 public class Chat {
     private String sender;
     private String receiver;
     private String message;
-    private String img;
+    private Uri img;
     private Timestamp timestamp; // 将数据类型更改为 Timestamp
 
-    public Chat(String sender, String receiver, String message, String img, Timestamp timestamp) {
+    public Chat(String sender, String receiver, String message, Uri img, Timestamp timestamp) {
         this.sender = sender;
         this.receiver = receiver;
         this.message = message;
@@ -45,11 +47,11 @@ public class Chat {
         this.message = message;
     }
 
-    public String getImg() {
+    public Uri getImg() {
         return img;
     }
 
-    public void setImg(String img) {
+    public void setImg(Uri img) {
         this.img = img;
     }
 

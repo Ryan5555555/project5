@@ -86,6 +86,7 @@
             android:layout_centerVertical="true"
             android:layout_toStartOf="@id/btn_send"
             android:hint="請輸入文字"
+                android:textColor="@color/black"
             android:layout_weight="1"/>
         <ImageButton
             android:id="@+id/btn_send"

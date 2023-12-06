@@ -31,9 +31,9 @@
             android:id="@+id/show_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/draw2"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true"
+            />
 
         <TextView
             android:id="@+id/time"
@@ -44,5 +44,17 @@
             android:layout_toLeftOf="@+id/show_message"
             android:layout_marginTop="15dp"
             android:layout_marginRight="5dp"/>
+
+        <TextView
+            android:id="@+id/time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下午5:50"
+            android:textColor="@color/primarydark"
+            android:layout_toLeftOf="@+id/show_img"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignBottom="@id/show_img"
+            />
     </RelativeLayout>
 </RelativeLayout>
