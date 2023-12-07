@@ -134,18 +134,11 @@
                     android:layout_margin="20dp"
                     android:background="#f0f0f0"
                     android:padding="10dp"
-                    android:text="@string/rice_blast"
+                    android:text="病害描述文本"
                     android:textSize="24sp"
                     android:lineHeight="40sp"
                     android:textColor="@color/black"/>
-                <Button
-                    android:id="@+id/method"
-                    android:layout_width="275dp"
-                    android:layout_height="wrap_content"
-                    android:text="新增到管理作法"
-                    android:textSize="30sp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/button"/>
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -157,7 +150,209 @@
                     android:textSize="36sp"
                     android:textStyle="bold"
                     android:textColor="@color/white" />
+                <TextView
+                    android:id="@+id/describe2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:background="#f0f0f0"
+                    android:padding="10dp"
+                    android:text="防治建議文本"
+                    android:textSize="22sp"
+                    android:lineHeight="40sp"
+                    android:textColor="@color/black"/>
 
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*">
+                    <!-- stretchColumns="*" 表示所有列均匀拉伸 -->
+
+                    <!-- 行 1 -->
+                    <TableRow>
+                        <TextView
+                            android:text="藥劑名稱"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textSize="20sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:id="@+id/table1"
+                            android:text="14% 嘉賜克枯爛可溼性粉劑\n(tecloftalam + kasugamycin)
+"                           android:textSize="18sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:padding="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"/>
+                        <!-- 添加更多表头列 -->
+                    </TableRow>
+
+
+                    <!-- 行 2 -->
+                    <TableRow>
+                        <TextView
+                            android:text="作用機制代碼"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textSize="20sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/table2"
+                            android:text="FRAC 3;G1 系統性"
+                            android:textSize="18sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:padding="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                    <!-- 行 3 -->
+                    <TableRow>
+                        <TextView
+                            android:text="每公頃施藥量"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textSize="20sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/table3"
+                            android:text="0.8公升"
+                            android:textSize="18sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:padding="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                    <!-- 行 3 -->
+                    <TableRow>
+                        <TextView
+                            android:text="稀釋倍數(倍)"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textSize="20sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/table4"
+                            android:text="1,300"
+                            android:textSize="18sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:padding="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                    <!-- 行 3 -->
+                    <TableRow>
+                        <TextView
+                            android:text="施藥方法"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textSize="20sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/table5"
+                            android:text="分蘗盛期病斑出現時開始施藥，每隔14天再施藥一次，連續四次。"
+                            android:textSize="18sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:padding="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            android:text="注意事項"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textSize="20sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/table6"
+                            android:text="1.抽穗期避免用藥。2.採收前21天停止施藥。"
+                            android:textSize="18sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:layout_margin="5dp"
+                            android:background="#f0f0f0"
+                            android:padding="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                </TableLayout>
+                <Button
+                    android:id="@+id/method"
+                    android:layout_width="275dp"
+                    android:layout_height="wrap_content"
+                    android:text="新增到管理作法"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button"/>
             </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>

@@ -53,20 +53,6 @@ public class knowledge extends AppCompatActivity {
             startActivity(intent);
         });
 
-
-// 取得全域變數看是否有機
-        GlobalVariable globalVariable = (GlobalVariable) getApplication();
-        globalVariable.loadSwitchState(this);
-        String planet_method = globalVariable.planet_method;
-        if ("有機".equals(planet_method)) {
-            Toast.makeText(getApplicationContext(), "有機", Toast.LENGTH_SHORT).show();
-        } else if ("慣行".equals(planet_method)) {
-            Toast.makeText(getApplicationContext(), "慣行", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "123", Toast.LENGTH_SHORT).show();
-        }
-
-
             //彈出視窗
             R1.setOnClickListener(new View.OnClickListener() {
                 @Override

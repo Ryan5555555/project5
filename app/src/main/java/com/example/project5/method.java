@@ -56,7 +56,7 @@ public class method extends AppCompatActivity {
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 200 // 設置高度為 100dp
         );
-        cardParams1.setMargins(20, 30, 20, 30); // 設置 margin
+        cardParams1.setMargins(20, 0, 20, 0); // 設置 margin
         cardView1.setLayoutParams(cardParams1);
         cardView1.setRadius(20f);
         cardView1.setId(R.id.C1);
@@ -169,7 +169,6 @@ public class method extends AppCompatActivity {
         cardParams2.addRule(RelativeLayout.BELOW, R.id.C1);
         cardView2.setLayoutParams(cardParams2);
         cardView2.setRadius(20f);
-        cardView2.setId(R.id.C2);
 
         // 動態創建 RelativeLayout
         RelativeLayout relativeLayout2 = new RelativeLayout(this);
@@ -273,7 +272,6 @@ public class method extends AppCompatActivity {
             cardParams3.addRule(RelativeLayout.BELOW, R.id.C2);
             cardView3.setLayoutParams(cardParams3);
             cardView3.setRadius(20f);
-            cardView3.setId(R.id.C3);
 
             // 動態創建 RelativeLayout
             RelativeLayout relativeLayout3 = new RelativeLayout(this);
@@ -377,7 +375,6 @@ public class method extends AppCompatActivity {
             cardParams4.addRule(RelativeLayout.BELOW, R.id.C3);
             cardView4.setLayoutParams(cardParams4);
             cardView4.setRadius(20f);
-            cardView4.setId(R.id.C4);
 
             // 動態創建 RelativeLayout
             RelativeLayout relativeLayout4 = new RelativeLayout(this);
@@ -481,7 +478,6 @@ public class method extends AppCompatActivity {
             cardParams5.addRule(RelativeLayout.BELOW, R.id.C4);
             cardView5.setLayoutParams(cardParams5);
             cardView5.setRadius(20f);
-            cardView5.setId(R.id.C5);
 
             // 動態創建 RelativeLayout
             RelativeLayout relativeLayout5 = new RelativeLayout(this);
