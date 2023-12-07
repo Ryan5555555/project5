@@ -29,7 +29,6 @@ import java.util.Map;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
@@ -46,7 +45,6 @@ public class user extends AppCompatActivity {
     Button logout,save;
 
     private Switch switch1;
-    private SharedPreferences switch_state;
 
     @Override
     public void onStart() {
@@ -181,7 +179,7 @@ public class user extends AppCompatActivity {
                 editor.putBoolean("switch_state", isChecked);
                 editor.apply();
 
-                Toast.makeText(user.this, "Switch State: " + isChecked, Toast.LENGTH_SHORT).show();
+                Toast.makeText(user.this, "Switch State123: " + isChecked, Toast.LENGTH_SHORT).show();
             }
         });
         //String planet_method = isChecked ? "有機" : "慣行";

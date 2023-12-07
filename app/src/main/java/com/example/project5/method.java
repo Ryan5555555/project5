@@ -3,6 +3,7 @@ package com.example.project5;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -56,6 +57,8 @@ public class method extends AppCompatActivity {
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 200 // 設置高度為 100dp
         );
+
+        cardView1.setBackgroundColor(getResources().getColor(R.color.dark_green));
         cardParams1.setMargins(20, 0, 20, 0); // 設置 margin
         cardView1.setLayoutParams(cardParams1);
         cardView1.setRadius(20f);
@@ -89,6 +92,7 @@ public class method extends AppCompatActivity {
         textParams1.addRule(RelativeLayout.CENTER_VERTICAL);
         textParams1.leftMargin = 30; // 添加額外的左邊距
         textView1.setText(title);
+        textView1.setTextColor(Color.WHITE);
         textView1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
         textView1.setTypeface(null, Typeface.BOLD);
         relativeLayout1.addView(textView1, textParams1);
@@ -165,6 +169,7 @@ public class method extends AppCompatActivity {
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 200 // 設置高度為 200dp
         );
+        cardView2.setBackgroundColor(getResources().getColor(R.color.dark_green));
         cardParams2.setMargins(20, 30, 20, 30); // 設置 margin
         cardParams2.addRule(RelativeLayout.BELOW, R.id.C1);
         cardView2.setLayoutParams(cardParams2);
@@ -198,6 +203,7 @@ public class method extends AppCompatActivity {
         textParams2.addRule(RelativeLayout.CENTER_VERTICAL);
         textParams2.leftMargin = 30; // 添加額外的左邊距
         textView2.setText(title);
+        textView2.setTextColor(Color.WHITE);
         textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
         textView2.setTypeface(null, Typeface.BOLD);
         relativeLayout2.addView(textView2, textParams2);
@@ -268,6 +274,7 @@ public class method extends AppCompatActivity {
                     RelativeLayout.LayoutParams.MATCH_PARENT,
                     200 // 設置高度為 200dp
             );
+            cardView3.setBackgroundColor(getResources().getColor(R.color.dark_green));
             cardParams3.setMargins(20, 30, 20, 30); // 設置 margin
             cardParams3.addRule(RelativeLayout.BELOW, R.id.C2);
             cardView3.setLayoutParams(cardParams3);
@@ -301,6 +308,7 @@ public class method extends AppCompatActivity {
             textParams3.addRule(RelativeLayout.CENTER_VERTICAL);
             textParams3.leftMargin = 30; // 添加額外的左邊距
             textView3.setText(title);
+            textView3.setTextColor(Color.WHITE);
             textView3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
             textView3.setTypeface(null, Typeface.BOLD);
             relativeLayout3.addView(textView3, textParams3);
@@ -371,6 +379,7 @@ public class method extends AppCompatActivity {
                     RelativeLayout.LayoutParams.MATCH_PARENT,
                     200 // 設置高度為 200dp
             );
+            cardView4.setBackgroundColor(getResources().getColor(R.color.dark_green));
             cardParams4.setMargins(20, 30, 20, 30); // 設置 margin
             cardParams4.addRule(RelativeLayout.BELOW, R.id.C3);
             cardView4.setLayoutParams(cardParams4);
@@ -404,6 +413,7 @@ public class method extends AppCompatActivity {
             textParams4.addRule(RelativeLayout.CENTER_VERTICAL);
             textParams4.leftMargin = 30; // 添加額外的左邊距
             textView4.setText(title);
+            textView4.setTextColor(Color.WHITE);
             textView4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
             textView4.setTypeface(null, Typeface.BOLD);
             relativeLayout4.addView(textView4, textParams4);
@@ -474,6 +484,7 @@ public class method extends AppCompatActivity {
                     RelativeLayout.LayoutParams.MATCH_PARENT,
                     200 // 設置高度為 200dp
             );
+            cardView5.setBackgroundColor(getResources().getColor(R.color.dark_green));
             cardParams5.setMargins(20, 30, 20, 30); // 設置 margin
             cardParams5.addRule(RelativeLayout.BELOW, R.id.C4);
             cardView5.setLayoutParams(cardParams5);
@@ -507,6 +518,7 @@ public class method extends AppCompatActivity {
             textParams5.addRule(RelativeLayout.CENTER_VERTICAL);
             textParams5.leftMargin = 30; // 添加額外的左邊距
             textView5.setText(title);
+            textView5.setTextColor(Color.WHITE);
             textView5.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
             textView5.setTypeface(null, Typeface.BOLD);
             relativeLayout5.addView(textView5, textParams5);

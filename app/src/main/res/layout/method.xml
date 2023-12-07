@@ -85,7 +85,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:cardBackgroundColor="@color/card_green">
+            app:cardBackgroundColor="@color/white">
             <TextView
                 android:id="@+id/nomethod"
                 android:layout_width="wrap_content"

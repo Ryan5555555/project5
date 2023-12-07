@@ -8,9 +8,9 @@
             <stroke android:width="3dp"
                 android:color="@color/black"/>
             <!--填充顏色為紫色-->
-            <solid android:color="@color/purple"/>
+            <solid android:color="#FF8040"/>
             <!--四周圓角角度4dp-->
-            <corners android:radius="4dp"/>
+            <corners android:radius="10dp"/>
         </shape>
     </item>
     <!--點擊按鈕時的樣式-->
