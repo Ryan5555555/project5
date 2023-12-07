@@ -1,6 +1,10 @@
 package com.example.project5.chattest;
 
+import static androidx.camera.core.CameraXThreads.TAG;
+
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,6 +25,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URI;
+import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
@@ -66,6 +76,8 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
             //holder.show_img.setImageURI(Uri.parse(chat.getImg()));
             // 使用 Glide 來載入圖片
             Glide.with(mContext).load(chat.getImg()).into(holder.show_img);
+            //holder.show_img.setImageBitmap(getImageBitmap(chat.getImg()));
+
             holder.time2.setVisibility(View.VISIBLE);
             holder.time.setVisibility(View.GONE);
         }
@@ -77,6 +89,8 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
             holder.time.setVisibility(View.VISIBLE);
             holder.time2.setVisibility(View.GONE);
         }
+        else{holder.show_message.setText("error:訊息傳送失敗");}
+
         // 格式化时间戳为台湾时间
         if (chat.getTimestamp() != null) {
             SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
@@ -162,5 +176,25 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
             return MSG_TYPE_TEXT; //用於顯示文字的 View Type
         }
     }
+
+    private Bitmap getImageBitmap(String Img) {
+        Bitmap bm = null;
+        try {
+            Uri uri = Uri.parse(Img);
+            URI javaUri = URI.create(uri.toString());
+            URL url = javaUri.toURL();
+            URLConnection conn = url.openConnection();
+            conn.connect();
+            InputStream is = conn.getInputStream();
+            BufferedInputStream bis = new BufferedInputStream(is);
+            bm = BitmapFactory.decodeStream(bis);
+            bis.close();
+            is.close();
+        } catch (IOException e) {
+            Log.e("Bitmap error", "Error getting bitmap", e);
+        }
+        return bm;
+    }
+
 }
 

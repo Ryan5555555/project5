@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,7 +19,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.project5.R;
 import com.example.project5.home;
 import com.example.project5.user;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FieldValue;
@@ -27,6 +31,7 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.sql.Time;
 import java.util.ArrayList;
@@ -106,8 +111,11 @@ public class MessageActivity extends AppCompatActivity {
 
         hashmap.put("sender", sender);
         hashmap.put("receiver", receiver);
-        hashmap.put("message", message);
         hashmap.put("timestamp", FieldValue.serverTimestamp());
+
+        //if(message != null){
+            hashmap.put("message", message);
+        //}else{hashmap.put("message", "");}
 
         if (imageUri != null)
         {
@@ -154,15 +162,44 @@ public class MessageActivity extends AppCompatActivity {
     }
 
     private void sendImageMessage(String sender, String receiver, Uri imageUri) {
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-        StorageReference date = storageReference.child("chat_images/"+System.currentTimeMillis());
-        date.putFile(imageUri);
-        date.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override public void onSuccess(Uri uri) {
-                // 在這裡處理獲取到的下載網址(uri)
-                sendMessage(sender, receiver,null, uri);
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference();
+        StorageReference date = storageReference.child("chat_images/"+FieldValue.serverTimestamp());
+        UploadTask uploadTask = date.putFile(imageUri);
+
+        Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+            @Override
+            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                if (!task.isSuccessful()) {
+                    throw task.getException();
+                }
+
+                // Continue with the task to get the download URL
+                return date.getDownloadUrl();
+            }
+        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+                if (task.isSuccessful()) {
+                    Uri downloadUri = task.getResult();
+                    sendMessage(sender,receiver,null,downloadUri);
+                } else {
+                    // Handle failures
+                    Toast.makeText(MessageActivity.this , "傳送失敗!",Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
+
+
+
+
+        //date.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        //    @Override public void onSuccess(Uri uri) {
+                // 在這裡處理獲取到的下載網址(uri)
+        //        sendMessage(sender, receiver,null, uri);
+        //    }
+        //});
 
     }
 
