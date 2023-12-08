@@ -57,6 +57,7 @@ public class method extends AppCompatActivity {
                 200 // 設置高度為 100dp
         );
         cardParams1.setMargins(20, 0, 20, 0); // 設置 margin
+            cardView1.setCardBackgroundColor(getResources().getColor(R.color.dark_green));
         cardView1.setLayoutParams(cardParams1);
         cardView1.setRadius(20f);
         cardView1.setId(R.id.C1);
@@ -91,6 +92,7 @@ public class method extends AppCompatActivity {
         textView1.setText(title);
         textView1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
         textView1.setTypeface(null, Typeface.BOLD);
+            textView1.setTextColor(getResources().getColor(android.R.color.white));
         relativeLayout1.addView(textView1, textParams1);
 
         // 在 RelativeLayout1 中添加 ImageButton
@@ -167,6 +169,7 @@ public class method extends AppCompatActivity {
         );
         cardParams2.setMargins(20, 30, 20, 30); // 設置 margin
         cardParams2.addRule(RelativeLayout.BELOW, R.id.C1);
+            cardView2.setCardBackgroundColor(getResources().getColor(R.color.dark_green));
         cardView2.setLayoutParams(cardParams2);
         cardView2.setRadius(20f);
 
@@ -200,6 +203,7 @@ public class method extends AppCompatActivity {
         textView2.setText(title);
         textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
         textView2.setTypeface(null, Typeface.BOLD);
+            textView2.setTextColor(getResources().getColor(android.R.color.white));
         relativeLayout2.addView(textView2, textParams2);
 
         // 在 RelativeLayout2 中添加 ImageButton
@@ -270,6 +274,7 @@ public class method extends AppCompatActivity {
             );
             cardParams3.setMargins(20, 30, 20, 30); // 設置 margin
             cardParams3.addRule(RelativeLayout.BELOW, R.id.C2);
+            cardView3.setCardBackgroundColor(getResources().getColor(R.color.dark_green));
             cardView3.setLayoutParams(cardParams3);
             cardView3.setRadius(20f);
 
@@ -303,6 +308,7 @@ public class method extends AppCompatActivity {
             textView3.setText(title);
             textView3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
             textView3.setTypeface(null, Typeface.BOLD);
+            textView3.setTextColor(getResources().getColor(android.R.color.white));
             relativeLayout3.addView(textView3, textParams3);
 
             // 在 RelativeLayout3 中添加 ImageButton
@@ -375,7 +381,7 @@ public class method extends AppCompatActivity {
             cardParams4.addRule(RelativeLayout.BELOW, R.id.C3);
             cardView4.setLayoutParams(cardParams4);
             cardView4.setRadius(20f);
-
+            cardView4.setCardBackgroundColor(getResources().getColor(R.color.dark_green));
             // 動態創建 RelativeLayout
             RelativeLayout relativeLayout4 = new RelativeLayout(this);
             RelativeLayout.LayoutParams relativeParams4 = new RelativeLayout.LayoutParams(
@@ -406,6 +412,7 @@ public class method extends AppCompatActivity {
             textView4.setText(title);
             textView4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
             textView4.setTypeface(null, Typeface.BOLD);
+            textView4.setTextColor(getResources().getColor(android.R.color.white));
             relativeLayout4.addView(textView4, textParams4);
 
             // 在 RelativeLayout4 中添加 ImageButton
@@ -478,7 +485,7 @@ public class method extends AppCompatActivity {
             cardParams5.addRule(RelativeLayout.BELOW, R.id.C4);
             cardView5.setLayoutParams(cardParams5);
             cardView5.setRadius(20f);
-
+            cardView5.setCardBackgroundColor(getResources().getColor(R.color.dark_green));
             // 動態創建 RelativeLayout
             RelativeLayout relativeLayout5 = new RelativeLayout(this);
             RelativeLayout.LayoutParams relativeParams5 = new RelativeLayout.LayoutParams(
@@ -507,6 +514,7 @@ public class method extends AppCompatActivity {
             textParams5.addRule(RelativeLayout.CENTER_VERTICAL);
             textParams5.leftMargin = 30; // 添加額外的左邊距
             textView5.setText(title);
+            textView5.setTextColor(getResources().getColor(android.R.color.white));
             textView5.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
             textView5.setTypeface(null, Typeface.BOLD);
             relativeLayout5.addView(textView5, textParams5);
