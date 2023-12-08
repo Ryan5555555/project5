@@ -57,18 +57,11 @@ public class result extends AppCompatActivity{
         GlobalVariable globalVariable = (GlobalVariable) getApplication();
         globalVariable.loadSwitchState(this);
         String planet_method = globalVariable.planet_method;
-        if ("有機".equals(planet_method)) {
-            Toast.makeText(getApplicationContext(), "有機", Toast.LENGTH_SHORT).show();
-        } else if ("慣行".equals(planet_method)) {
-            Toast.makeText(getApplicationContext(), "慣行", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "123", Toast.LENGTH_SHORT).show();
-        }
 
 
         if ("慣行".equals(planet_method)) {
             // 根据传递的result
-            if ("".equals(result_name)) {
+            if ("正常葉片".equals(result_name)) {
                 result.setText("健康葉片");
                 confidence.setText("");
                 describe.setText("病害辨識為健康葉片");
@@ -170,7 +163,7 @@ public class result extends AppCompatActivity{
                 check = false;
             }
         }else if ("有機".equals(planet_method)) {
-            if ("".equals(result_name)) {
+            if ("正常葉片".equals(result_name)) {
                 result.setText("健康葉片");
                 confidence.setText("");
                 describe.setText("病害辨識為健康葉片");

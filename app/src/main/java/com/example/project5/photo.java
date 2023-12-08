@@ -115,13 +115,12 @@ public class photo extends AppCompatActivity {
                     maxPos =i;
                 }
             }
-            String[] classes ={"正常葉片","稻熱病","胡麻葉枯病","白葉枯病","褐條葉枯病"};
+            String[] classes ={"正常葉片","稻熱病","紋枯病","胡麻葉枯病","白葉枯病","褐條葉枯病"};
 
             // 获取最大概率的类别和对应的概率
             String recognizedClass = classes[maxPos];
             float confidence =  Math.round(confidences[maxPos] * 100);
 
-            //String resultText = String.format("辨識結果: %s \n "+"信賴度: %.1f%%\n", recognizedClass, confidence);
             String resultText = recognizedClass;
             String result_confidence =  String.valueOf(confidence);
             Intent intent = new Intent();
