@@ -20,8 +20,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.project5.R;
 import com.example.project5.chat;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -42,6 +44,7 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
     public  static  final int MSG_TYPE_RIGHT = 1;//發送者
     public static final int MSG_TYPE_IMAGE = 2;
     public static final int MSG_TYPE_TEXT = 3;
+    public Uri duri;
 
     private Context mContext;//上下文
     private List<Chat> mChat;//聊天訊息的資料來源
@@ -70,13 +73,38 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
     public void onBindViewHolder(@NonNull MessageAdapter.ViewHolder holder, int position) {
         Chat chat = mChat.get(position);
 
-        if (chat.getImg() != null) {
+
+        long currentTimeMillis = chat.getTimestamp().toDate().getTime();
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference();
+        StorageReference date = storageReference.child("chat_images/"+ currentTimeMillis);
+        date.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>()
+        {
+            @Override
+            public void onSuccess(Uri downloadUrl)
+            {
+              duri = downloadUrl;
+            }
+        });
+
+
+        if (chat.getMessage() == null) {
             holder.show_img.setVisibility(View.VISIBLE);
             holder.show_message.setVisibility(View.GONE);
-            //holder.show_img.setImageURI(Uri.parse(chat.getImg()));
+            System.out.println(chat.getTimestamp().toDate());
+            System.out.println(System.currentTimeMillis());
+            System.out.println(chat.getimage());
+            //holder.show_img.setImageURI(Uri.parse(chat.getimage()));
             // 使用 Glide 來載入圖片
-            Glide.with(mContext).load(chat.getImg()).into(holder.show_img);
-            //holder.show_img.setImageBitmap(getImageBitmap(chat.getImg()));
+            //try {
+           // Uri uri = Uri.parse(chat.getimage());
+           // URI javaUri = URI.create(uri.toString());
+          //  URL url = javaUri.toURL();
+            Glide.with(mContext).load(chat.getimage()).into(holder.show_img);
+        //} catch (IOException e) {
+          //  Log.e("OnBindImg", "load url error", e);
+        //}
+            //holder.show_img.setImageBitmap(getImageBitmap(chat.getimage()));
 
             holder.time2.setVisibility(View.VISIBLE);
             holder.time.setVisibility(View.GONE);
@@ -89,7 +117,7 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
             holder.time.setVisibility(View.VISIBLE);
             holder.time2.setVisibility(View.GONE);
         }
-        else{holder.show_message.setText("error:訊息傳送失敗");}
+        //else{holder.show_message.setText("error:訊息傳送失敗");}
 
         // 格式化时间戳为台湾时间
         if (chat.getTimestamp() != null) {
@@ -170,7 +198,7 @@ public class MessageAdapter extends  RecyclerView.Adapter<MessageAdapter.ViewHol
     }
 
     public int TextOrImg(int position){
-        if(mChat.get(position).getImg() != null) {
+        if(mChat.get(position).getMessage() == null) {
             return MSG_TYPE_IMAGE; //用於顯示圖片的 View Type
         }else{
             return MSG_TYPE_TEXT; //用於顯示文字的 View Type

@@ -93,6 +93,7 @@
                 android:text="暫無作法"
                 android:textStyle="bold"
                 android:textSize="50sp"
+                android:textColor="@color/black"
                 android:layout_gravity="center"/>
     <RelativeLayout
         android:layout_width="match_parent"

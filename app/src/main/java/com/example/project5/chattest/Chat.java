@@ -8,14 +8,14 @@ public class Chat {
     private String sender;
     private String receiver;
     private String message;
-    private String img;
+    private String image;
     private Timestamp timestamp; // 将数据类型更改为 Timestamp
 
-    public Chat(String sender, String receiver, String message, String img, Timestamp timestamp) {
+    public Chat(String sender, String receiver, String message, String image, Timestamp timestamp) {
         this.sender = sender;
         this.receiver = receiver;
         this.message = message;
-        this.img = img;
+        this.image = image;
         this.timestamp = timestamp;
     }
 
@@ -47,12 +47,12 @@ public class Chat {
         this.message = message;
     }
 
-    public String getImg() {
-        return img;
+    public String getimage() {
+        return image;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setimage(String image) {
+        this.image = image;
     }
 
     public Timestamp getTimestamp() {

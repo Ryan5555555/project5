@@ -148,7 +148,7 @@
                                 android:layout_margin="5dp"
                                 android:background="#f0f0f0"
                                 android:textColor="@color/black"/>
-                            <TextView
+                            j6<TextView
                                 android:id="@+id/table1"
                                 android:text="14% 嘉賜克枯爛可溼性粉劑\n(tecloftalam + kasugamycin)
 "                           android:textSize="18sp"

@@ -62,7 +62,8 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="15dp"
                     android:text="一.生產優質稻米的栽培管理"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="@color/black"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -80,7 +81,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="15dp"
                     android:text="@string/popular_science_1"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <!-- 水稻土壤與施肥管理技術-->
                 <ImageView
@@ -98,7 +100,8 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="15dp"
                     android:text="二.水稻土壤與施肥管理技術"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/popular_science_2"
@@ -124,7 +127,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="5dp"
                     android:text="  稻草收集後可製作堆肥，置於田間堆肥化後再掩施於土壤，稻草燃燒將污染空氣品質且增加鉀肥，對水稻所需肥分助益不大"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <Button
                     android:id="@+id/close"

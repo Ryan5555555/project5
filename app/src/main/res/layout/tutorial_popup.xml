@@ -62,7 +62,8 @@
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="15dp"
                         android:text="一.個人檔案"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:textColor="@color/black"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -78,7 +79,8 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="15dp"
                         android:text="個人檔案頁面顯示各種資訊以方便溝通及判別病害，點擊右方筆型圖示後即可進行更改。"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
 
                 <!-- 第二段描述-->
                     <TextView
@@ -87,7 +89,8 @@
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="15dp"
                         android:text="二.病害圖鑑"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:textColor="@color/black"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -103,7 +106,8 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="15dp"
                         android:text="病害圖鑑頁面顯示各種既爐的病愾，點擊帶有病害名稱的白色方框即可顯示該病害相關描述。"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
 
                 <!-- 第三段描述-->
                     <TextView
@@ -112,7 +116,8 @@
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="15dp"
                         android:text="三.聯絡專家"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:textColor="@color/black"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -128,7 +133,8 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="15dp"
                         android:text="聯絡專家頁面可以詢問花蓮農改處稻米病蟲害專家的意見，點擊畫面右下角紙飛機圖示擊可傳送訊息至聊天室，左下角可選擇圖片傳送至聊天室。"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
 
 
                 <!-- 第三段描述-->
@@ -138,7 +144,8 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="15dp"
                     android:text="四.病害辨識"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="@color/black"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -161,7 +168,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="15dp"
                     android:text = "病害辨識頁面點擊中間相機圖示按鈕可以啟動相機辨識，左下角可選擇圖片傳送病害圖片。\n\n拍攝病害建議:\n 1.請將欲拍攝物置於畫面正中間且背景無其他物品\n 2.病害葉片建議單片拍攝\n 3.模糊或晃動的照片有可能降低辨識信心度"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <!-- 第四段描述-->
                 <TextView
@@ -170,7 +178,8 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="15dp"
                     android:text="四.病害處理作法管理"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="@color/black"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -186,7 +195,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="15dp"
                     android:text = "病害處理頁面能管理您所想要使用的用藥，點擊個病害名稱方框擊可察看詳細資訊。"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <Button
                     android:id="@+id/close"

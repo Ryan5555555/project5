@@ -75,6 +75,7 @@
             android:background="#f0f0f0"
             android:lineHeight="40sp"
             android:padding="10dp"
+            android:textColor="@color/black"
             android:text="POPUP Window 示例"
             android:textSize="20sp" />
 
